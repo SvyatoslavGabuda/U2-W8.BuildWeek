@@ -1,8 +1,10 @@
 aside {
   background-color: black;
   color: white;
-
+  h2 {
+  }
   .friend {
+    font-size: 0.8em;
     display: flex;
     justify-content: space-around;
     .name {
