@@ -1,1 +1,73 @@
-/*# sourceMappingURL=style.css.map */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #121212;
+  font-family: "Montserrat", sans-serif;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 196px;
+  background-color: #000000;
+  padding: 24px;
+}
+nav .logo img {
+  width: 130px;
+}
+nav .navigation ul {
+  list-style: none;
+  margin-top: 20px;
+}
+nav .navigation ul li {
+  padding: 10px 0px;
+}
+nav .navigation ul li a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+}
+nav .navigation ul li a:hover, nav .navigation ul li a:active, nav .navigation ul li a:focus {
+  color: #ffffff;
+}
+nav .navigation ul li a .fa {
+  font-size: 20px;
+  margin-right: 10px;
+}
+nav .navigation ul li a .fa:hover, nav .navigation ul li a .fa:active, nav .navigation ul li a .fa:focus {
+  color: #b3b3b3;
+}
+nav .playlist ul {
+  list-style: none;
+  margin-top: 20px;
+}
+nav .playlist ul a {
+  color: #858080;
+  text-decoration: none;
+  font-size: 10px;
+}
+nav .policies {
+  position: absolute;
+  bottom: 20px;
+}
+nav .policies ul {
+  list-style: none;
+}
+nav .policies ul li {
+  padding-bottom: 5px;
+}
+nav .policies ul li a {
+  color: #b3b3b3;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 10px;
+}
+nav .policies ul li a:hover, nav .policies ul li a:active, nav .policies ul li a:focus {
+  text-decoration: underline;
+}/*# sourceMappingURL=style.css.map */
