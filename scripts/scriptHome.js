@@ -3,6 +3,14 @@ const contenitoreFirstSong = document.getElementById("firstSong");
 const contenitoreAlbum = document.getElementById("albums");
 const contenitoreAltro = document.getElementById("altro");
 
+const altraPag = function (event) {
+  console.log(event.target.getAttribute("idalbum"));
+  location.assign(
+    //apicistorti
+    `../pages/pag1.html?id=${event.target.getAttribute("idalbum")}`
+  );
+};
+
 const createAlbum = function (where, object) {
   where.innerHTML += `<div class="col-4 my-2">
     <div class="row g-0">
@@ -11,11 +19,11 @@ const createAlbum = function (where, object) {
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <a idalbum="${object.album.id}" href="#"><h5 class="card-title">${object.album.title}</h5></>
+          <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="card-title">${object.album.title}</h5>
           <p class="d-none idAlbum">
           ${object.album.id}
         </p>
-          
+        
         </div>
       </div>
     </div>
@@ -70,14 +78,6 @@ const createFirstSong = function (where, object) {
     </div>
   </div>`;
 };
-
-// const altraPag = function (){
-//     location.assign(
-//         //apicistorti
-//         ` Page.html?numDomCorrette=${numDomCorrette}&numDomSbagliate=${numDomSbagliate}&numeroTotaleDomande=${numeroTotaleDomande}`
-//       );
-
-// }
 
 const fetchUrl = async function (search) {
   try {
