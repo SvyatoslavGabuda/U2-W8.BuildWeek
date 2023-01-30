@@ -1,0 +1,18 @@
+aside {
+  background-color: black;
+  color: white;
+
+  .friend {
+    display: flex;
+    justify-content: space-around;
+    .name {
+      font-weight: bold;
+    }
+
+    img {
+      border-radius: 50%;
+      aspect-ratio: 1/1;
+      width: 50px;
+    }
+  }
+}

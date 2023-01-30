@@ -71,6 +71,14 @@ const createFirstSong = function (where, object) {
   </div>`;
 };
 
+// const altraPag = function (){
+//     location.assign(
+//         //apicistorti
+//         ` Page.html?numDomCorrette=${numDomCorrette}&numDomSbagliate=${numDomSbagliate}&numeroTotaleDomande=${numeroTotaleDomande}`
+//       );
+
+// }
+
 const fetchUrl = async function (search) {
   try {
     let res = await fetch(`${ulrDeezer}${search}`);

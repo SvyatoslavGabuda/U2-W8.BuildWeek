@@ -1,0 +1,93 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #121212;
+  font-family: "Montserrat", sans-serif;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 196px;
+  background-color: #000000;
+  padding: 24px;
+
+  .logo {
+    img {
+      width: 130px;
+    }
+  }
+
+  .navigation {
+    ul {
+      list-style: none;
+      margin-top: 20px;
+      li {
+        padding: 10px 0px;
+        a {
+          color: #b3b3b3;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 13px;
+
+          &:hover,
+          &:active,
+          &:focus {
+            color: #ffffff;
+          }
+
+          .fa {
+            font-size: 20px;
+            margin-right: 10px;
+
+            &:hover,
+            &:active,
+            &:focus {
+              color: #b3b3b3;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .playlist {
+    ul {
+      list-style: none;
+      margin-top: 20px;
+      a {
+        color: #858080;
+        text-decoration: none;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .policies {
+    position: absolute;
+    bottom: 20px;
+    ul {
+      list-style: none;
+      li {
+        padding-bottom: 5px;
+        a {
+          color: #b3b3b3;
+          font-weight: 500;
+          text-decoration: none;
+          font-size: 10px;
+
+          &:hover,
+          &:active,
+          &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
