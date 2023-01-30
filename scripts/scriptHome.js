@@ -11,7 +11,11 @@ const createAlbum = function (where, object) {
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">${object.album.title}</h5>
+          <a idalbum="${object.album.id}" href="#"><h5 class="card-title">${object.album.title}</h5></>
+          <p class="d-none idAlbum">
+          ${object.album.id}
+        </p>
+          
         </div>
       </div>
     </div>
