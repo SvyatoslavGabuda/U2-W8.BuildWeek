@@ -1,1 +1,16 @@
-/*# sourceMappingURL=style.css.map */
+aside {
+  background-color: black;
+  color: white;
+}
+aside .friend {
+  display: flex;
+  justify-content: space-around;
+}
+aside .friend .name {
+  font-weight: bold;
+}
+aside .friend img {
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  width: 50px;
+}/*# sourceMappingURL=style.css.map */
