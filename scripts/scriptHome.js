@@ -10,6 +10,13 @@ const altraPag = function (event) {
     `../pages/pag1.html?id=${event.target.getAttribute("idalbum")}`
   );
 };
+const caricaArtista = function (event) {
+  console.log(event);
+  location.assign(
+    //apicistorti
+    `../pages/artist.html?id=${event.target.getAttribute("idartist")}`
+  );
+};
 
 const createAlbum = function (where, object) {
   where.innerHTML += `<div class="col-4 my-2">
@@ -62,7 +69,7 @@ const createFirstSong = function (where, object) {
           >
             <p class="">ALBUM</p>
             <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="">${object.album.title}</h5>
-            <p class="">${object.artist.name}</p>
+            <p idartist="${object.artist.id}" onclick=caricaArtista(event) class="">${object.artist.name}</p>
             <p class="">
               <small class="text-muted"
                 >Ascolta il nuovo singolo di ${object.artist.name}</small
