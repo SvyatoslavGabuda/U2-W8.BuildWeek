@@ -1,9 +1,11 @@
 
 footer{
     width: 100%;
-    height: 150px;
+    height: 100px;
     background-color:  #2F2F2F;
     color: white;
+    position: fixed;
+    bottom: 0;
 }
 footer img{
     width: 70px;
