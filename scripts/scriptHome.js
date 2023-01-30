@@ -35,7 +35,7 @@ const createCards = function (where, object) {
     <div class="card">
       <img src=${object.album.cover_medium} class="card-img-top" alt="album cover" />
       <div class="card-body">
-        <h5 class="card-title">${object.title}</h5>
+        <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="card-title">${object.title}</h5>
         <p class="card-text">
           ${object.album.title}
         </p>
@@ -61,7 +61,7 @@ const createFirstSong = function (where, object) {
             class="d-flex flex-column justify-content-between h-100 ps-3"
           >
             <p class="">ALBUM</p>
-            <h5 class="">${object.album.title}</h5>
+            <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="">${object.album.title}</h5>
             <p class="">${object.artist.name}</p>
             <p class="">
               <small class="text-muted"
