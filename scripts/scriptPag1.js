@@ -22,7 +22,15 @@ const caricaArtista = function (event) {
   );
 };
 const preferiti = [];
+window.onload = () => {
+  const arrayOfID = JSON.parse(localStorage.getItem("preferiti"));
+  arrayOfID.forEach((el) => {
+    preferiti.push(el);
+  });
+};
 const aggiungiPreferiti = function (event) {
+  console.log("cliccato");
+  console.log(event);
   preferiti.push(event.target.getAttribute("idalbum"));
   console.log(event.target.getAttribute("idalbum"));
   console.log(preferiti);
@@ -58,9 +66,11 @@ const fetchUrlAlbum = async function () {
             <div class="row">
               <div class="col-12">
                 <button><i class="bi bi-play-circle"></i></button>
-                <button idalbum="${
+                <button class="p-3" id="save" idalbum="${
                   data.id
-                }" onclick=aggiungiPreferiti(event) ><i class="bi bi-heart"></i></button>
+                }" onclick=aggiungiPreferiti(event) ><i idalbum="${
+        data.id
+      }" class="bi bi-heart"></i></button>
                 <button><i class="bi bi-arrow-down-circle"></i></button>
                 <button><i class="bi bi-three-dots"></i></button>
               </div>
@@ -79,6 +89,17 @@ const fetchUrlAlbum = async function () {
                 <p>DURATA</p>
               </div>
             </div>`;
+
+      // onclick=aggiungiPreferiti(event)
+      // const saveBtn = document.getElementById("save");
+      // console.log(saveBtn);
+      // const aggiungiPreferiti = function (event) {
+      //   preferiti.push(event.target.getAttribute("idalbum"));
+      //   console.log(event.currentTarget.getAttribute("idalbum"));
+      //   console.log(preferiti);
+      //   localStorage.setItem("preferiti", JSON.stringify(preferiti));
+      // };
+      // saveBtn.onclick = aggiungiPreferiti;
 
       const tracks = data.tracks.data;
 
@@ -106,6 +127,7 @@ const fetchUrlAlbum = async function () {
       });
 
       console.log(data);
+
       return data;
     }
   } catch (error) {

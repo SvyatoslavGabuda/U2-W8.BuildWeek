@@ -21,23 +21,25 @@ const loadLikedSongs = function () {
   if (localStorage.getItem("preferiti")) {
     console.log(arrayOfID);
     const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album";
-    const fetchUrlAlbum = async function () {
-      try {
-        let res = await fetch(`${urlAlbum}/${arrayOfID[0]}`);
-        if (res.ok) {
-          const data = await res.json();
-          console.log(data.tracks.data);
-          data.tracks.data.forEach((song) => {
-            createCards(containerLikedSongs, song);
-          });
+    arrayOfID.forEach((id) => {
+      const fetchUrlAlbum = async function () {
+        try {
+          let res = await fetch(`${urlAlbum}/${id}`);
+          if (res.ok) {
+            const data = await res.json();
+            console.log(data.tracks.data);
+            data.tracks.data.forEach((song) => {
+              createCards(containerLikedSongs, song);
+            });
 
-          return data;
+            return data;
+          }
+        } catch (error) {
+          console.log(error);
         }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchUrlAlbum();
+      };
+      fetchUrlAlbum();
+    });
   } else {
     alert("non ci sono task da caricare");
   }
