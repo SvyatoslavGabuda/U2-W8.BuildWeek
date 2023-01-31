@@ -7,6 +7,13 @@ console.log(ourID);
 
 const doveMettiAlbum = document.getElementById("albumCaricati");
 
+const returnMinute = function (sec) {
+  const minute = Math.floor(sec / 60);
+  const restSeconds = sec - minute * 60;
+  const time = `${minute}:${restSeconds}`;
+  return time;
+};
+
 const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album";
 const fetchUrlAlbum = async function () {
   try {
@@ -28,15 +35,15 @@ const fetchUrlAlbum = async function () {
                 <h5>${data.title}</h5>
                 <p>${data.artist.name}, ${data.release_date},${
         data.tracks.data.length
-      } tracce, ${Math.floor(data.duration / 60)} min</p>
+      } tracce, ${returnMinute(data.duration)} min</p>
               </div>
             </div>
             <div class="row">
               <div class="col-12">
-                <button>play</button>
-                <button>cuore</button>
-                <button>freccia in basso</button>
-                <button>...</button>
+                <button><i class="bi bi-play-circle"></i></button>
+                <button><i class="bi bi-suit-heart"></i></button>
+                <button><i class="bi bi-arrow-down-circle"></i></button>
+                <button><i class="bi bi-three-dots"></i></button>
               </div>
             </div>
             <div class="row">
@@ -72,7 +79,7 @@ const fetchUrlAlbum = async function () {
                 <p>${el.rank}</p>
               </div>
               <div class="col-2">
-                <p>${Math.floor(el.duration / 60)}</p>
+                <p>${returnMinute(el.duration)}</p>
               </div>
             </div>`;
       });
