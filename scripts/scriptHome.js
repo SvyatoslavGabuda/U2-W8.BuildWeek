@@ -84,8 +84,8 @@ const createFirstSong = function (where, object) {
               >
             </p>
             <p>
-              <button>Play</button> <button>Salva</button>
-              <button>...</button>
+              <button class="button-green" role="button">Play</button> <button class="button-green" role="button">Salva</button>
+              <button class="button-green" role="button">...</button>
             </p>
           </div>
         </div>
