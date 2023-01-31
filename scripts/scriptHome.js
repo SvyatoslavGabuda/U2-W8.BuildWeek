@@ -181,3 +181,20 @@ const artista = async function () {
   }
 };
 artista();
+
+// search
+const contenitorePrincipale = document.getElementById("contenitorePrincipale");
+const contenitoreRicerca = document.getElementById("contenitoreRicerca");
+const search = async function () {
+  const inputSearch = document.getElementById("");
+
+  const query = inputSearch.value;
+  contenitorePrincipale.classList.add("d-none");
+  contenitoreRicerca.classList.remove("d-none");
+
+  const risultati = await fetchUrl(query);
+
+  risultati.forEach((song) => {
+    createCards(contenitoreRicerca, song);
+  });
+};
