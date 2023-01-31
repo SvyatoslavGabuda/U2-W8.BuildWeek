@@ -184,9 +184,9 @@ artista();
 
 // search
 const contenitorePrincipale = document.getElementById("contenitorePrincipale");
-const contenitoreRicerca = document.getElementById("contenitoreRicerca");
+const contenitoreRicerca = document.getElementById("");
 const search = async function () {
-  const inputSearch = document.getElementById("");
+  const inputSearch = document.getElementById("ricerca");
 
   const query = inputSearch.value;
   contenitorePrincipale.classList.add("d-none");
@@ -198,3 +198,12 @@ const search = async function () {
     createCards(contenitoreRicerca, song);
   });
 };
+
+const closeFriends_btn = document.querySelector(".show-friends");
+
+const showFriends = function () {
+  const aside = document.querySelector("aside");
+  aside.classList.toggle("d-none");
+};
+
+closeFriends_btn.onclick = showFriends;
