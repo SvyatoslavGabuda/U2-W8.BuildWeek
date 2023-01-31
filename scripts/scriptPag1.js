@@ -21,6 +21,13 @@ const caricaArtista = function (event) {
     `../pages/artist.html?id=${event.target.getAttribute("idartist")}`
   );
 };
+const preferiti = [];
+const aggiungiPreferiti = function (event) {
+  preferiti.push(event.target.getAttribute("idalbum"));
+  console.log(event.target.getAttribute("idalbum"));
+  console.log(preferiti);
+  localStorage.setItem("preferiti", JSON.stringify(preferiti));
+};
 
 const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album";
 const fetchUrlAlbum = async function () {
@@ -51,7 +58,9 @@ const fetchUrlAlbum = async function () {
             <div class="row">
               <div class="col-12">
                 <button><i class="bi bi-play-circle"></i></button>
-                <button><i class="bi bi-suit-heart"></i></button>
+                <button idalbum="${
+                  data.id
+                }" onclick=aggiungiPreferiti(event) ><i class="bi bi-heart"></i></button>
                 <button><i class="bi bi-arrow-down-circle"></i></button>
                 <button><i class="bi bi-three-dots"></i></button>
               </div>
