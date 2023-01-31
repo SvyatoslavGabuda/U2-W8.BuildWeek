@@ -97,25 +97,25 @@ nav .policies ul li a:hover, nav .policies ul li a:active, nav .policies ul li a
   transform: scale(1.05) rotate(-1deg);
 }
 
-#mainPageBg {
-  background-image: linear-gradient(180deg, rgb(37, 36, 36), rgb(49, 49, 46));
+.mainPageBg {
+  background: linear-gradient(45deg, hsl(180deg, 3%, 6%) 50%, hsl(120deg, 5%, 15%) 100%);
 }
-#mainPageBg p {
+.mainPageBg p {
   color: white;
   font-weight: bold;
   font-size: 20px;
 }
-#mainPageBg #clickableAlbum {
+.mainPageBg .clickableAlbum {
   color: white;
   font-weight: bold;
   font-size: 60px;
   cursor: pointer;
 }
-#mainPageBg #clickableArtist {
+.mainPageBg .clickableArtist {
   cursor: pointer;
 }
-#mainPageBg .text-muted {
-  color: lightgray !important;
+.mainPageBg .subtitle {
+  color: lightgray;
   font-size: 15px;
   font-weight: 200;
 }
