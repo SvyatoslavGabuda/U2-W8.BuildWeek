@@ -10,6 +10,14 @@ const altraPag = function (event) {
     `../pages/pag1.html?id=${event.target.getAttribute("idalbum")}`
   );
 };
+
+const returnMinute = function (sec) {
+  const minute = Math.floor(sec / 60);
+  const restSeconds = sec - minute * 60;
+  const time = `${minute}:${restSeconds}`;
+  return time;
+};
+
 const caricaArtista = function (event) {
   console.log(event);
   location.assign(
