@@ -61,7 +61,7 @@ const createCards = function (where, object) {
 };
 
 const createFirstSong = function (where, object) {
-  where.innerHTML += `<div class="col ">
+  where.innerHTML += `<div class="col">
     <div class="card mb-3">
       <div class="row g-0">
         <div class="col-md-4">
@@ -71,16 +71,16 @@ const createFirstSong = function (where, object) {
             alt="album cover"
           />
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8" id="mainPageBg">
           <div
             class="d-flex flex-column justify-content-between h-100 ps-3"
           >
             <p class="">ALBUM</p>
-            <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="">${object.album.title}</h5>
-            <p idartist="${object.artist.id}" onclick=caricaArtista(event) class="">${object.artist.name}</p>
+            <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="" id="clickableAlbum">${object.album.title}</h5>
+            <p idartist="${object.artist.id}" onclick=caricaArtista(event) class="" id="clickableArtist">${object.artist.name}</p>
             <p class="">
               <small class="text-muted"
-                >Ascolta il nuovo singolo di ${object.artist.name}</small
+                >Ascolta il nuovo singolo di ${object.artist.name}!</small
               >
             </p>
             <p>
