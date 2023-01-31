@@ -61,28 +61,24 @@ const createCards = function (where, object) {
 };
 
 const createFirstSong = function (where, object) {
-  where.innerHTML += `<div class="col ">
-    <div class="card mb-3">
+  where.innerHTML += `<div class="col">
+    <div class="card mb-3 border-0">
       <div class="row g-0">
         <div class="col-md-4">
           <img
             src=${object.album.cover_big}
-            class="img-fluid rounded-start"
+            class="img-fluid"
             alt="album cover"
           />
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 mainPageBg">
           <div
             class="d-flex flex-column justify-content-between h-100 ps-3"
           >
             <p class="">ALBUM</p>
-            <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="">${object.album.title}</h5>
-            <p idartist="${object.artist.id}" onclick=caricaArtista(event) class="">${object.artist.name}</p>
-            <p class="">
-              <small class="text-muted"
-                >Ascolta il nuovo singolo di ${object.artist.name}</small
-              >
-            </p>
+            <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="clickableAlbum">${object.album.title}</h5>
+            <p idartist="${object.artist.id}" onclick=caricaArtista(event) class="clickableArtist"">${object.artist.name}</p>
+            <p class="subtitle">Ascolta il nuovo singolo dei ${object.artist.name}!</p>
             <p>
               <button class="button-green" role="button">Play</button> <button class="button-green" role="button">Salva</button>
               <button class="button-green" role="button">...</button>

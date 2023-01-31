@@ -24,3 +24,31 @@
     transform: scale(1.05) rotate(-1deg);
   }
 }
+
+.mainPageBg {
+  background: linear-gradient(45deg, hsla(180, 3%, 6%, 1) 50%, hsla(120, 5%, 15%, 1) 100%);
+  p {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .clickableAlbum {
+    color: white;
+    font-weight: bold;
+    font-size: 60px;
+    cursor: pointer;
+  }
+  .clickableArtist {
+    cursor: pointer;
+  }
+  .subtitle {
+    color: lightgray;
+    font-size: 15px;
+    font-weight: 200;
+  }
+}
+.boldTitle {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
