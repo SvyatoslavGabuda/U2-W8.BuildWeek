@@ -14,6 +14,14 @@ const returnMinute = function (sec) {
   return time;
 };
 
+const caricaArtista = function (event) {
+  console.log(event);
+  location.assign(
+    //apicistorti
+    `../pages/artist.html?id=${event.target.getAttribute("idartist")}`
+  );
+};
+
 const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album";
 const fetchUrlAlbum = async function () {
   try {
@@ -33,9 +41,11 @@ const fetchUrlAlbum = async function () {
               <div class="col-9">
                 <p>ALBUM</p>
                 <h5>${data.title}</h5>
-                <p>${data.artist.name}, ${data.release_date},${
-        data.tracks.data.length
-      } tracce, ${returnMinute(data.duration)} min</p>
+                <p idartist="${data.artist.id}" onclick=caricaArtista(event)>${
+        data.artist.name
+      }, ${data.release_date},${data.tracks.data.length} tracce, ${returnMinute(
+        data.duration
+      )} min</p>
               </div>
             </div>
             <div class="row">
@@ -72,7 +82,9 @@ const fetchUrlAlbum = async function () {
                 </div>
                 <div class="col-6">
                   <p>${el.title}</p>
-                  <p>${el.artist.name}</p>
+                  <p idartist="${el.artist.id}" onclick=caricaArtista(event)>${
+          el.artist.name
+        }</p>
                 </div>
               </div>
               <div class="col-3">
