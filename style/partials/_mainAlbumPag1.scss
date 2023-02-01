@@ -1,0 +1,81 @@
+
+div.intestazioneAlbum{
+    padding: 50px 20px 10px 20px;
+    background-color: #e7a61a;
+    background-image: linear-gradient(rgb(243, 243, 243,0.5),rgb(82, 82, 82,0.5));
+    img {
+        box-shadow: 0px 0px 92px -5px rgba(0,0,0,1);
+
+    }
+    div.col-9{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        p{
+            font-size: 0.6em;
+            padding: 0;
+            margin: 0;
+            span{
+                img{
+                    border-radius: 100%;
+                    aspect-ratio: 1/1;
+                    width: 30px;
+                }
+            }
+
+        }
+        h5{
+            font-size: 3em;
+            font-weight: 900;
+        }
+    }
+}
+.bottoniAlbum{
+    padding: 20px 30px;
+    button{
+        padding: 10px 10px;
+        font-size: 2em;
+        border-radius: 100%;
+        border: none;
+        aspect-ratio: 1/1;
+        background: transparent;
+        color: white;
+        cursor: pointer;
+        user-select: none;
+        
+    }
+    button.play{
+        background:rgb(13, 177, 13);
+        color: black;
+        width: 10%;
+        text-align: center;
+    }
+
+}
+.intestazioneTracceAlbum{
+    padding-top: 10px;
+    margin: 0 10px 20px 10px;
+    border-bottom: 1px solid lightgray;
+    p{
+        color: rgb(159, 157, 157);
+        margin: 0;
+        padding-bottom: 5px;
+    }
+}
+.tracceAlbum{
+    margin: 0 10px 0px 10px;
+    p{
+        color: rgb(159, 157, 157)
+    }
+    div.col-5{
+        p:nth-of-type(1){
+            font-weight: 600;
+            color:  white;
+        }
+        p:nth-of-type(2){
+            font-size: 0.6em;
+            font-weight: 300;
+        }
+    }
+
+}

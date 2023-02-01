@@ -27,15 +27,15 @@ const fetchUrlArtist = async function () {
       console.log(tracks.data);
 
       doveMettoArtista.innerHTML += `
-       <div class="row pt-4">
-              <div class="col-3 ">
+       <div class="position-relative pt-4 intestazioneArtist">
+              <div class="col-12 z-0 ">
                 <img
                   class="img-fluid"
                   src=${artista.picture_big}
                   alt="album Cover"
                 />
               </div>
-              <div class="col-9">
+              <div class="col-12 z-1">
                 
                 <h5>${artista.name}</h5>
                 <p>${artista.nb_fan}</p>

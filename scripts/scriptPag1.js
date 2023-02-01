@@ -45,7 +45,7 @@ const fetchUrlAlbum = async function () {
       const data = await res.json();
 
       doveMettiAlbum.innerHTML += `
-       <div class="row">
+       <div class="row intestazioneAlbum text-light">
               <div class="col-3">
                 <img
                   class="img-fluid"
@@ -56,17 +56,23 @@ const fetchUrlAlbum = async function () {
               <div class="col-9">
                 <p>ALBUM</p>
                 <h5>${data.title}</h5>
-                <p idartist="${data.artist.id}" onclick=caricaArtista(event)>${
-        data.artist.name
-      }, ${data.release_date},${data.tracks.data.length} tracce, ${returnMinute(
+                <p > <span><img
+                class="img-fluid"
+                src=${data.artist.picture_small}
+                alt="album Cover"
+              /> </span><span idartist="${
+                data.artist.id
+              }" onclick=caricaArtista(event)>${data.artist.name}</span>, ${
+        data.release_date
+      },${data.tracks.data.length} tracce, ${returnMinute(
         data.duration
       )} min</p>
               </div>
             </div>
-            <div class="row">
+            <div class="row bottoniAlbum">
               <div class="col-12">
-                <button><i class="bi bi-play-circle"></i></button>
-                <button class="p-3" id="save" idalbum="${
+                <button class="play"><i class="bi bi-play-fill"></i></button>
+                <button  id="save" idalbum="${
                   data.id
                 }" onclick=aggiungiPreferiti(event) ><i idalbum="${
         data.id
@@ -75,18 +81,18 @@ const fetchUrlAlbum = async function () {
                 <button><i class="bi bi-three-dots"></i></button>
               </div>
             </div>
-            <div class="row">
-              <div class="col-1">
+            <div class="row intestazioneTracceAlbum">
+              <div class="col-1 d-flex justify-content-center">
                 <p>#</p>
               </div>
-              <div class="col-6">
+              <div class="col-5">
                 <p>TITOLO</p>
               </div>
               <div class="col-3">
-                <p>RIPRODUZIONI</p>
+                <p class="text-end pe-3">RIPRODUZIONI</p>
               </div>
-              <div class="col-2">
-                <p>DURATA</p>
+              <div class="col-3">
+                <p class="text-end pe-4"><i class="bi bi-clock"></i></p>
               </div>
             </div>`;
 
@@ -105,23 +111,23 @@ const fetchUrlAlbum = async function () {
 
       tracks.forEach((el, index) => {
         doveMettiAlbum.innerHTML += `
-        <div class="row">
-              <div class="col d-flex">
-                <div class="col-1">
+        <div class="row tracceAlbum">
+              
+                <div class="col-1 d-flex justify-content-center align-items-center ">
                   <p>${index + 1}</p>
                 </div>
-                <div class="col-6">
-                  <p>${el.title}</p>
-                  <p idartist="${el.artist.id}" onclick=caricaArtista(event)>${
+                <div class="col-5">
+                  <p >${el.title}</p>
+                  <p  idartist="${el.artist.id}" onclick=caricaArtista(event)>${
           el.artist.name
         }</p>
-                </div>
+                
               </div>
               <div class="col-3">
-                <p>${el.rank}</p>
+                <p class="text-end pe-3">${el.rank}</p>
               </div>
-              <div class="col-2">
-                <p>${returnMinute(el.duration)}</p>
+              <div class="col-3">
+                <p class="text-end pe-4">${returnMinute(el.duration)}</p>
               </div>
             </div>`;
       });
@@ -135,3 +141,12 @@ const fetchUrlAlbum = async function () {
   }
 };
 fetchUrlAlbum();
+
+const closeFriends_btn = document.querySelector(".show-friends");
+
+const showFriends = function () {
+  const aside = document.querySelector("aside");
+  aside.classList.toggle("d-none");
+};
+
+closeFriends_btn.onclick = showFriends;
