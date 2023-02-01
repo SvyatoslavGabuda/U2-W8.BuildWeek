@@ -53,3 +53,19 @@
   font-weight: bold;
   font-size: 20px;
 }
+.albumOrizzontali{
+  border-radius: 5px;
+  // margin: 2px 4px;
+  background: linear-gradient(270deg,rgb(209, 206, 206,0.2),rgb(36, 36, 36,0.5));
+  div.col-md-8{
+    display: flex;
+    align-items: center;
+  }
+  div.card-body{
+    
+    h5{
+      color: white;
+      font-weight: 700;
+    }
+  }
+}

@@ -46,9 +46,15 @@ div.intestazioneAlbum{
     }
     button.play{
         background:rgb(13, 177, 13);
+        font-size: 3em;
         color: black;
-        width: 10%;
+        // width: 60px;
+    
         text-align: center;
+        i{
+            width: 30px;
+            height: 30px;
+        }
     }
 
 }

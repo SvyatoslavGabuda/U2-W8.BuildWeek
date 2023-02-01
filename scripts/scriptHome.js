@@ -27,7 +27,8 @@ const caricaArtista = function (event) {
 };
 
 const createAlbum = function (where, object) {
-  where.innerHTML += `<div class="col-4 my-2">
+  where.innerHTML += `<div class="col-4  ">
+  <div class="albumOrizzontali m-1">
     <div class="row g-0">
       <div class="col-md-4">
         <img src=${object.album.cover_small} class="img-fluid rounded-start" alt="..." />
@@ -41,6 +42,7 @@ const createAlbum = function (where, object) {
         
         </div>
       </div>
+    </div>
     </div>
   </div>`;
 };

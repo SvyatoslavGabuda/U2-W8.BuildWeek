@@ -28,7 +28,7 @@ const fetchUrlArtist = async function () {
 
       doveMettoArtista.innerHTML += `
        <div class="position-relative pt-4 intestazioneArtist">
-              <div class="col-12 z-0 ">
+              <div class="col-12 z-0">
                 <img
                   class="img-fluid"
                   src=${artista.picture_big}

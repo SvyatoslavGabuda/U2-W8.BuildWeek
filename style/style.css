@@ -126,6 +126,19 @@ nav .policies ul li a:hover, nav .policies ul li a:active, nav .policies ul li a
   font-size: 20px;
 }
 
+.albumOrizzontali {
+  border-radius: 5px;
+  background: linear-gradient(270deg, rgba(209, 206, 206, 0.2), rgba(36, 36, 36, 0.5));
+}
+.albumOrizzontali div.col-md-8 {
+  display: flex;
+  align-items: center;
+}
+.albumOrizzontali div.card-body h5 {
+  color: white;
+  font-weight: 700;
+}
+
 footer {
   width: 100%;
   height: 100px;
@@ -209,9 +222,13 @@ div.intestazioneAlbum div.col-9 h5 {
 }
 .bottoniAlbum button.play {
   background: rgb(13, 177, 13);
+  font-size: 3em;
   color: black;
-  width: 10%;
   text-align: center;
+}
+.bottoniAlbum button.play i {
+  width: 30px;
+  height: 30px;
 }
 
 .intestazioneTracceAlbum {
