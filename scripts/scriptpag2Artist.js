@@ -69,7 +69,7 @@ const fetchUrlArtist = async function () {
                     <p>${index + 1}</p>
                   </div>
                   <div class="col-5">
-                  <p></p>
+                  
                     <p><span><img
                     class="img-fluid"
                     src=${el.album.cover_small}
