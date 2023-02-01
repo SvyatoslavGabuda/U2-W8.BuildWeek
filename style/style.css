@@ -221,6 +221,11 @@ div.intestazioneAlbum {
   padding: 50px 20px 10px 20px;
   background-color: transparent;
 }
+@media screen and (max-width: 576px) {
+  div.intestazioneAlbum {
+    padding: 20px 10px 5px 10px;
+  }
+}
 div.intestazioneAlbum img {
   box-shadow: 0px 0px 92px -5px rgb(0, 0, 0);
 }
@@ -235,6 +240,11 @@ div.intestazioneAlbum div.col-9 p {
   margin: 0;
   margin-top: 20px;
 }
+@media screen and (max-width: 900px) {
+  div.intestazioneAlbum div.col-9 p {
+    margin-top: 10px;
+  }
+}
 div.intestazioneAlbum div.col-9 p span img {
   border-radius: 100%;
   aspect-ratio: 1/1;
@@ -243,6 +253,16 @@ div.intestazioneAlbum div.col-9 p span img {
 div.intestazioneAlbum div.col-9 h5 {
   font-size: 4em;
   font-weight: 600;
+}
+@media screen and (max-width: 1200px) {
+  div.intestazioneAlbum div.col-9 h5 {
+    font-size: 3em;
+  }
+}
+@media screen and (max-width: 850px) {
+  div.intestazioneAlbum div.col-9 h5 {
+    font-size: 2.5em;
+  }
 }
 
 .bottoniAlbum {
@@ -483,7 +503,7 @@ main.result-section {
 }
 
 .mainPageBg {
-  background: linear-gradient(45deg, hsl(180deg, 3%, 6%) 50%, hsl(120deg, 5%, 15%) 100%);
+  background: linear-gradient(45deg, hsl(0deg, 0%, 0%) 43%, hsl(0deg, 0%, 19%) 100%);
 }
 .mainPageBg p {
   color: white;
@@ -525,10 +545,18 @@ main.result-section {
   display: flex;
   align-items: center;
 }
+.albumOrizzontali div.card-body {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .albumOrizzontali div.card-body h5 {
   color: white;
   font-weight: 500;
   font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .mysong .card {
@@ -546,7 +574,8 @@ main.result-section {
   padding: 0;
 }
 .mysong .card .card-body h5 {
-  font-weight: bold;
+  font-size: 13px;
+  font-weight: 500;
   text-transform: capitalize;
   cursor: pointer;
 }

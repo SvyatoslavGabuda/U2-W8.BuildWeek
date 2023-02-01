@@ -55,7 +55,8 @@
 }
 
 .mainPageBg {
-  background: linear-gradient(45deg, hsla(180, 3%, 6%, 1) 50%, hsla(120, 5%, 15%, 1) 100%);
+  // background: linear-gradient(45deg, hsla(180, 3%, 6%, 1) 50%, hsla(120, 5%, 15%, 1) 100%);
+  background: linear-gradient(45deg, hsla(0, 0%, 0%, 1) 43%, hsla(0, 0%, 19%, 1) 100%);
   p {
     color: white;
     font-weight: bold;
@@ -96,10 +97,16 @@
     align-items: center;
   }
   div.card-body {
+    white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     h5 {
       color: white;
       font-weight: 500;
       font-size: $fontsizeMain;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }
@@ -116,7 +123,8 @@
   .card-body {
     padding: 0;
     h5 {
-      font-weight: bold;
+      font-size: $fontsizeMain;
+      font-weight: 500;
       text-transform: capitalize;
       cursor: pointer;
     }

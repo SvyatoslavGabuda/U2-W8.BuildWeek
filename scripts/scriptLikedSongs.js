@@ -41,7 +41,16 @@ const loadLikedSongs = function () {
       fetchUrlAlbum();
     });
   } else {
-    alert("non ci sono task da caricare");
+    containerLikedSongs.innerHTML = `
+    <p class="text-light"> Non hai messo Mi Piace a nessuna canzone <i class="bi bi-emoji-frown"></i> </p>`;
   }
 };
 loadLikedSongs();
+const closeFriends_btn = document.querySelector(".show-friends");
+
+const showFriends = function () {
+  const aside = document.querySelector("aside");
+  aside.classList.toggle("d-none");
+};
+
+closeFriends_btn.onclick = showFriends;

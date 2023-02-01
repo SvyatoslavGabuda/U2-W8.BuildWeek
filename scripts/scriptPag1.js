@@ -60,8 +60,8 @@ const fetchUrlAlbum = async function () {
               </div>`;
 
       doveMettiAlbum.innerHTML += `
-       <div class="row intestazioneAlbum text-light">
-              <div class="col-3">
+       <div class="row intestazioneAlbum text-light flex-column align-items-center flex-md-row">
+              <div class="col-8 col-md-3">
                 <img
                   class="img-fluid"
                   src=${data.cover_big}
@@ -161,7 +161,7 @@ const closeFriends_btn = document.querySelector(".show-friends");
 
 const showFriends = function () {
   const aside = document.querySelector("aside");
-  aside.classList.toggle("d-none");
+  aside.classList.toggle("d-lg-block");
 };
 
 closeFriends_btn.onclick = showFriends;

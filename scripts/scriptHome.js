@@ -27,13 +27,13 @@ const caricaArtista = function (event) {
 };
 
 const createAlbum = function (where, object) {
-  where.innerHTML += `<div class="col-4  ">
+  where.innerHTML += `<div class="col ">
   <div class="albumOrizzontali m-1">
     <div class="row g-0">
-      <div class="col-md-4">
+      <div class="col-4">
         <img idalbum="${object.album.id}" onclick=altraPag(event) src=${object.album.cover_small} class="img-fluid rounded-start" alt="..." />
       </div>
-      <div class="col-md-8">
+      <div class="col-8 d-flex align-items-center">
         <div class="card-body">
           <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="card-title">${object.album.title}</h5>
           <p class="d-none idAlbum">
@@ -48,7 +48,7 @@ const createAlbum = function (where, object) {
 };
 
 const createCards = function (where, object) {
-  where.innerHTML += `<div class="col col-3 mysong">
+  where.innerHTML += `<div class="col col-6 col-sm-3  mysong">
     <div class="card">
       <img idalbum="${object.album.id}" onclick=altraPag(event) src=${
     object.album.cover_medium
@@ -67,7 +67,7 @@ const createCards = function (where, object) {
 const createFirstSong = function (where, object) {
   where.innerHTML += `<div class="col ">
     <div class="card mb-3 border-0 mainPageBg">
-      <div class="row g-0 p-5">
+      <div class="row g-0 p-4">
         <div class="col-md-3 d-flex justify-content-center align-items-center bg-trasparent">
           <img
             src=${object.album.cover_big}
@@ -213,7 +213,8 @@ const closeFriends_btn = document.querySelector(".show-friends");
 
 const showFriends = function () {
   const aside = document.querySelector("aside");
-  aside.classList.toggle("d-none");
+  // aside.classList.toggle("d-none");
+  aside.classList.toggle("d-lg-block");
 };
 
 closeFriends_btn.onclick = showFriends;

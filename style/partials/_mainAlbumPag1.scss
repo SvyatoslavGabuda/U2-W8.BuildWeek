@@ -29,6 +29,11 @@ div.intestazioneAlbum{
     margin: 0;
     
     padding: 50px 20px 10px 20px;
+    @media screen and (max-width:576px) {
+        padding: 20px 10px 5px 10px;
+        
+    }
+
     background-color: transparent;
     // background-image: linear-gradient(rgb(243, 243, 243,0.5),rgb(82, 82, 82,0.5));
     img {
@@ -44,6 +49,10 @@ div.intestazioneAlbum{
             padding: 0;
             margin: 0;
             margin-top: 20px;
+            @media screen and (max-width:900px) {
+                margin-top: 10px;
+                
+            }
             span{
                 img{
                     border-radius: 100%;
@@ -57,6 +66,14 @@ div.intestazioneAlbum{
         h5{
             font-size: 4em;
             font-weight: 600;
+            @media screen and (max-width:1200px) {
+                font-size: 3em;
+                
+            }
+            @media screen and (max-width:850px) {
+                font-size: 2.5em;
+                
+            }
         }
     }
 }
