@@ -1,9 +1,20 @@
 @import "./partials/var";
 @import "./partials/color";
 @import "./partials/header";
-@import "./partials/main";
 @import "./partials/footer";
 @import "./partials/aside";
 @import "./partials/mainAlbumPag1";
 @import "./partials/mainArtistsPag2";
 @import "./partials/search";
+@import "./partials/main";
+
+
+* {
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    background-color: #121212;
+    font-family: "Montserrat", sans-serif;
+  }

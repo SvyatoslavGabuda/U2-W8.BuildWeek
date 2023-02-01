@@ -1,4 +1,5 @@
 .button-green {
+  
   background-color: #1db954;
   border-radius: 100px;
   box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset, rgba(44, 187, 99, 0.15) 0 1px 2px,
@@ -26,6 +27,7 @@
 }
 
 .button-black {
+  margin-left: 15px;
   background-color: #202221;
   border-radius: 100px;
   box-shadow: rgba(255, 255, 255, 0.2) 0 -25px 18px -14px inset, rgba(255, 255, 255, 0.15) 0 1px 2px,
@@ -57,7 +59,7 @@
   p {
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 2$fontsizeMain;
     margin: 0;
   }
   .clickableAlbum {
@@ -67,6 +69,7 @@
     cursor: pointer;
     h5{
       margin: 0;
+      font-size: $fontsizeMain;
     }
   }
   .clickableArtist {
@@ -74,8 +77,9 @@
   }
   .subtitle {
     color: lightgray;
-    font-size: 15px;
+    font-size: $fontsizeMain;
     font-weight: 200;
+    margin-bottom: 10px;
   }
 }
 .boldTitle {
@@ -94,7 +98,8 @@
   div.card-body {
     h5 {
       color: white;
-      font-weight: 700;
+      font-weight: 500;
+      font-size: $fontsizeMain;
     }
   }
 }

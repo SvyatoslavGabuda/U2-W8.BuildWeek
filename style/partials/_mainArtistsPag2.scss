@@ -26,7 +26,7 @@
         margin: 0;
        
         i{
-            color:rgb(0, 15, 183);
+            color:#3D91F4;
             font-size: 1.6em;
         }
     }
@@ -40,6 +40,7 @@
     p{
         color: rgb(159, 157, 157);
         margin: 0;
+        font-size: $fontsizeMain;
         
         span{
             img{
@@ -56,6 +57,7 @@
             color:  white;
             padding: 0;
             margin: 0;
+            font-size: $fontsizeMain;
         }
         
     }
@@ -88,17 +90,20 @@
     button.play{
         background:transparent;
         font-size: 3em;
-        color: rgb(13, 177, 13);
+        color: $verdeSpotify;
         text-align: center;
         
     }
     button.follow{
-        border: 2px outset rgb(159, 157, 157); 
-        border-radius: 0;
+        border: 1px outset white;
+        
+        font-size: 12px;
+        font-weight: 900;
+        border-radius: 5px;
         aspect-ratio: auto;
-        padding: 10p;
+        padding: 6px 10px;
         &:hover{
-            border: 2px inset white; 
+            border: 1px inset white; 
         }
 
     }
@@ -119,11 +124,15 @@
     }
     h5{
         color: white;
+        font-size: $fontsizeMain;
+        font-weight: 800;
         padding: 0;
         margin: 0;
+        margin-bottom: 7px;
     }
     p{
        color: rgb(159, 157, 157);
+       font-size: $fontsizeMain;
        padding: 0;
        margin: 0;
 

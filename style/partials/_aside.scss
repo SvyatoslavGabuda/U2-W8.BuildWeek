@@ -1,13 +1,17 @@
 aside {
   background-color: black;
-  color: white;
-  font-size: 0.8em;
-  height: 100%;
+  color: rgb(173, 173, 173);
+  font-size: 9px;
+  
   .friend {
     display: flex;
     justify-content: space-around;
+    cursor: pointer;
+    &:hover{
+      color: white;
+    }
     .name {
-      font-weight: bold;
+      font-weight: 900;
     }
 
     img {

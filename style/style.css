@@ -1,13 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  background-color: #121212;
-  font-family: "Montserrat", sans-serif;
-}
-
 nav {
   position: -webkit-sticky;
   position: sticky;
@@ -31,13 +21,13 @@ nav .navigation ul li a {
   color: #b3b3b3;
   text-decoration: none;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 12px;
 }
 nav .navigation ul li a:hover, nav .navigation ul li a:active, nav .navigation ul li a:focus {
   color: #ffffff;
 }
 nav .navigation ul li a .fa {
-  font-size: 20px;
+  font-size: 13px;
   margin-right: 10px;
 }
 nav .navigation ul li a .fa:hover, nav .navigation ul li a .fa:active, nav .navigation ul li a .fa:focus {
@@ -50,7 +40,7 @@ nav .playlist ul {
 nav .playlist ul a {
   color: #858080;
   text-decoration: none;
-  font-size: 10px;
+  font-size: 13px;
 }
 nav .policies {
   position: absolute;
@@ -66,128 +56,10 @@ nav .policies ul li a {
   color: #b3b3b3;
   font-weight: 500;
   text-decoration: none;
-  font-size: 10px;
+  font-size: 13px;
 }
 nav .policies ul li a:hover, nav .policies ul li a:active, nav .policies ul li a:focus {
   text-decoration: underline;
-}
-
-.button-green {
-  background-color: #1db954;
-  border-radius: 100px;
-  box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset, rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px, rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px, rgba(44, 187, 99, 0.15) 0 16px 32px;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-  display: inline-block;
-  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
-  padding: 7px 20px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 250ms;
-  border: 0;
-  font-size: 16px;
-  -moz-user-select: none;
-   -ms-user-select: none;
-       user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-.button-green:hover {
-  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset, rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px, rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px, rgba(44, 187, 99, 0.25) 0 16px 32px;
-  transform: scale(1.05) rotate(-1deg);
-}
-
-.button-black {
-  background-color: #202221;
-  border-radius: 100px;
-  box-shadow: rgba(255, 255, 255, 0.2) 0 -25px 18px -14px inset, rgba(255, 255, 255, 0.15) 0 1px 2px, rgba(255, 255, 255, 0.15) 0 2px 4px, rgba(255, 255, 255, 0.15) 0 4px 8px, rgba(255, 255, 255, 0.15) 0 8px 16px, rgba(255, 255, 255, 0.15) 0 16px 32px;
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  display: inline-block;
-  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
-  padding: 7px 20px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 250ms;
-  border: 0;
-  font-size: 16px;
-  -moz-user-select: none;
-   -ms-user-select: none;
-       user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-.button-black:hover {
-  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset, rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px, rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px, rgba(44, 187, 99, 0.25) 0 16px 32px;
-  transform: scale(1.05) rotate(-1deg);
-}
-
-.mainPageBg {
-  background: linear-gradient(45deg, hsl(180deg, 3%, 6%) 50%, hsl(120deg, 5%, 15%) 100%);
-}
-.mainPageBg p {
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  margin: 0;
-}
-.mainPageBg .clickableAlbum {
-  color: white;
-  font-weight: bold;
-  font-size: 60px;
-  cursor: pointer;
-}
-.mainPageBg .clickableAlbum h5 {
-  margin: 0;
-}
-.mainPageBg .clickableArtist {
-  cursor: pointer;
-}
-.mainPageBg .subtitle {
-  color: lightgray;
-  font-size: 15px;
-  font-weight: 200;
-}
-
-.boldTitle {
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.albumOrizzontali {
-  border-radius: 5px;
-  background: linear-gradient(270deg, rgba(209, 206, 206, 0.2), rgba(36, 36, 36, 0.5));
-}
-.albumOrizzontali div.col-md-8 {
-  display: flex;
-  align-items: center;
-}
-.albumOrizzontali div.card-body h5 {
-  color: white;
-  font-weight: 700;
-}
-
-.mysong .card {
-  background-color: rgba(0, 0, 0, 0);
-  color: white;
-  max-width: 200px;
-}
-.mysong .card img {
-  border-radius: 5px;
-}
-.mysong .card .card-body {
-  padding: 0;
-}
-.mysong .card .card-body h5 {
-  font-weight: bold;
-  text-transform: capitalize;
-  cursor: pointer;
-}
-.mysong .card .card-body p {
-  font-size: 0.8em;
-  color: grey;
-  text-transform: capitalize;
 }
 
 footer {
@@ -308,16 +180,19 @@ i.fa-step-backward {
 
 aside {
   background-color: black;
-  color: white;
-  font-size: 0.8em;
-  height: 100%;
+  color: rgb(173, 173, 173);
+  font-size: 9px;
 }
 aside .friend {
   display: flex;
   justify-content: space-around;
+  cursor: pointer;
+}
+aside .friend:hover {
+  color: white;
 }
 aside .friend .name {
-  font-weight: bold;
+  font-weight: 900;
 }
 aside .friend img {
   border-radius: 50%;
@@ -331,15 +206,14 @@ aside .friend img {
 
 .sfondo {
   width: 100%;
-  height: 60%;
+  height: 100%;
   z-index: -1;
   opacity: 0.9;
-  background-image: linear-gradient(rgba(243, 243, 243, 0.1), rgba(82, 82, 82, 0.1));
 }
 .sfondo img {
-  filter: blur(100px);
+  filter: blur(900px) brightness(2) saturate(10000%);
   width: 100%;
-  height: 60%;
+  height: 100%;
 }
 
 div.intestazioneAlbum {
@@ -359,6 +233,7 @@ div.intestazioneAlbum div.col-9 p {
   font-size: 0.6em;
   padding: 0;
   margin: 0;
+  margin-top: 20px;
 }
 div.intestazioneAlbum div.col-9 p span img {
   border-radius: 100%;
@@ -366,8 +241,8 @@ div.intestazioneAlbum div.col-9 p span img {
   width: 30px;
 }
 div.intestazioneAlbum div.col-9 h5 {
-  font-size: 3em;
-  font-weight: 800;
+  font-size: 4em;
+  font-weight: 600;
 }
 
 .bottoniAlbum {
@@ -396,14 +271,14 @@ div.intestazioneAlbum div.col-9 h5 {
 .bottoniAlbum button.play {
   background: transparent;
   font-size: 3em;
-  color: rgb(13, 177, 13);
+  color: #1db954;
   text-align: center;
 }
 
 .intestazioneTracceAlbum {
   padding-top: 10px;
   margin: 0 10px 20px 10px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid rgba(159, 157, 157, 0.1);
 }
 .intestazioneTracceAlbum p {
   color: rgb(159, 157, 157);
@@ -418,6 +293,7 @@ div.intestazioneAlbum div.col-9 h5 {
   color: rgb(159, 157, 157);
 }
 .tracceAlbum div.col-5 p:nth-of-type(1) {
+  font-weight: 400;
   color: white;
   padding: 0;
   margin: 0;
@@ -452,7 +328,7 @@ div.intestazioneAlbum div.col-9 h5 {
   margin: 0;
 }
 .intestazioneArtist p i {
-  color: rgb(0, 15, 183);
+  color: #3D91F4;
   font-size: 1.6em;
 }
 
@@ -462,6 +338,7 @@ div.intestazioneAlbum div.col-9 h5 {
 .tracceArtista p {
   color: rgb(159, 157, 157);
   margin: 0;
+  font-size: 13px;
 }
 .tracceArtista p span img {
   width: 40px;
@@ -471,6 +348,7 @@ div.intestazioneAlbum div.col-9 h5 {
   color: white;
   padding: 0;
   margin: 0;
+  font-size: 13px;
 }
 
 .bottoniArtista {
@@ -499,17 +377,19 @@ div.intestazioneAlbum div.col-9 h5 {
 .bottoniArtista button.play {
   background: transparent;
   font-size: 3em;
-  color: rgb(13, 177, 13);
+  color: #1db954;
   text-align: center;
 }
 .bottoniArtista button.follow {
-  border: 2px outset rgb(159, 157, 157);
-  border-radius: 0;
+  border: 1px outset white;
+  font-size: 12px;
+  font-weight: 900;
+  border-radius: 5px;
   aspect-ratio: auto;
-  padding: 10p;
+  padding: 6px 10px;
 }
 .bottoniArtista button.follow:hover {
-  border: 2px inset white;
+  border: 1px inset white;
 }
 
 .braniPreferiti div.col-3 span {
@@ -524,11 +404,15 @@ div.intestazioneAlbum div.col-9 h5 {
 }
 .braniPreferiti h5 {
   color: white;
+  font-size: 13px;
+  font-weight: 800;
   padding: 0;
   margin: 0;
+  margin-bottom: 7px;
 }
 .braniPreferiti p {
   color: rgb(159, 157, 157);
+  font-size: 13px;
   padding: 0;
   margin: 0;
 }
@@ -541,4 +425,136 @@ div.intestazioneAlbum div.col-9 h5 {
 
 main.result-section {
   margin-left: 100px;
+}
+
+.button-green {
+  background-color: #1db954;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset, rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px, rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px, rgba(44, 187, 99, 0.15) 0 16px 32px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.button-green:hover {
+  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset, rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px, rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px, rgba(44, 187, 99, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.button-black {
+  margin-left: 15px;
+  background-color: #202221;
+  border-radius: 100px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0 -25px 18px -14px inset, rgba(255, 255, 255, 0.15) 0 1px 2px, rgba(255, 255, 255, 0.15) 0 2px 4px, rgba(255, 255, 255, 0.15) 0 4px 8px, rgba(255, 255, 255, 0.15) 0 8px 16px, rgba(255, 255, 255, 0.15) 0 16px 32px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.button-black:hover {
+  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset, rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px, rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px, rgba(44, 187, 99, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.mainPageBg {
+  background: linear-gradient(45deg, hsl(180deg, 3%, 6%) 50%, hsl(120deg, 5%, 15%) 100%);
+}
+.mainPageBg p {
+  color: white;
+  font-weight: bold;
+  font-size: 2 13px;
+  margin: 0;
+}
+.mainPageBg .clickableAlbum {
+  color: white;
+  font-weight: bold;
+  font-size: 60px;
+  cursor: pointer;
+}
+.mainPageBg .clickableAlbum h5 {
+  margin: 0;
+  font-size: 13px;
+}
+.mainPageBg .clickableArtist {
+  cursor: pointer;
+}
+.mainPageBg .subtitle {
+  color: lightgray;
+  font-size: 13px;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+.boldTitle {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.albumOrizzontali {
+  border-radius: 5px;
+  background: linear-gradient(270deg, rgba(209, 206, 206, 0.2), rgba(36, 36, 36, 0.5));
+}
+.albumOrizzontali div.col-md-8 {
+  display: flex;
+  align-items: center;
+}
+.albumOrizzontali div.card-body h5 {
+  color: white;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.mysong .card {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  max-width: 200px;
+}
+.mysong .card img {
+  border-radius: 5px;
+}
+.mysong .card .card-body {
+  padding: 0;
+}
+.mysong .card .card-body h5 {
+  font-weight: bold;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.mysong .card .card-body p {
+  font-size: 0.8em;
+  color: grey;
+  text-transform: capitalize;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #121212;
+  font-family: "Montserrat", sans-serif;
 }/*# sourceMappingURL=style.css.map */

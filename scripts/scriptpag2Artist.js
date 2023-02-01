@@ -36,16 +36,16 @@ const fetchUrlArtist = async function () {
               
 
              
-             <p> <i class="bi bi-shield-fill-check"></i> Artista verificato</p>
+             <p> <i class="bi bi-patch-check-fill"></i> Artista verificato</p>
                 <h5>${artista.name}</h5>
-                <p>${artista.nb_fan} ascoltatori mensili</p>
+                <p class="mb-3">${artista.nb_fan} ascoltatori mensili</p>
               
 
             </div>
 
             </div>
             
-            <div class="row">
+            <div class="row ps-4">
               <div class="col-12 bottoniArtista ">
                 <button class="play"><i class="bi bi-play-circle-fill"></i></button>
                 
@@ -54,13 +54,13 @@ const fetchUrlArtist = async function () {
               </div>
             </div>
 
-            <div class="row">
-            <div class="col-7">
+            <div class="row py-4 ps-4">
+            <div class="col-8">
 
-             <h2 class="text-light">Popolari</h2>
+             <h2 class="text-light fs-4 fw-bolder">Popolari</h2>
              </div>
-             <div class="col-5">
-             <h2 class="text-light">Brani che ti piacciono</h2>
+             <div class="col-4">
+             <h2 class="text-light fs-4 fw-bolder">Brani che ti piacciono</h2>
              </div>
 
             </div>`;
@@ -114,3 +114,12 @@ const fetchUrlArtist = async function () {
   }
 };
 fetchUrlArtist();
+
+const closeFriends_btn = document.querySelector(".show-friends");
+
+const showFriends = function () {
+  const aside = document.querySelector("aside");
+  aside.classList.toggle("d-none");
+};
+
+closeFriends_btn.onclick = showFriends;
