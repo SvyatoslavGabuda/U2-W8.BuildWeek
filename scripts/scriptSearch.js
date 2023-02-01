@@ -11,8 +11,8 @@ closeFriends_btn.onclick = showFriends;
 // create card album
 
 const createCards = function (where, object) {
-  where.innerHTML += `<div class="col col-6 col-sm-4 col-md-3 mysong">
-    <div class="card m-2 mb-5">
+  where.innerHTML += `<div class="col col-6 mb-5 col-sm-4 col-md-3 mysong">
+    <div class="card m-2">
       <img src=${
         object.album.cover_medium
       } class="card-img-top" alt="album cover" />
