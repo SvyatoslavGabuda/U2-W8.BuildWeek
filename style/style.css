@@ -161,6 +161,7 @@ aside {
   background-color: black;
   color: white;
   font-size: 0.8em;
+  height: 100%;
 }
 aside .friend {
   display: flex;
@@ -255,4 +256,14 @@ div.intestazioneAlbum div.col-9 h5 {
 .tracceAlbum div.col-5 p:nth-of-type(2) {
   font-size: 0.6em;
   font-weight: 300;
+}
+
+.searchBar {
+  border: 0;
+  border-radius: 1em;
+  padding: 0.2em 1em;
+}
+
+main.result-section {
+  margin-left: 196px;
 }/*# sourceMappingURL=style.css.map */
