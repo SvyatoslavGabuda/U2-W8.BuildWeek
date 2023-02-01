@@ -139,6 +139,28 @@ nav .policies ul li a:hover, nav .policies ul li a:active, nav .policies ul li a
   font-weight: 700;
 }
 
+.mysong .card {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  max-width: 200px;
+}
+.mysong .card img {
+  border-radius: 5px;
+}
+.mysong .card .card-body {
+  padding: 0;
+}
+.mysong .card .card-body h5 {
+  font-weight: bold;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.mysong .card .card-body p {
+  font-size: 0.8em;
+  color: grey;
+  text-transform: capitalize;
+}
+
 footer {
   width: 100%;
   height: 100px;
@@ -265,5 +287,5 @@ div.intestazioneAlbum div.col-9 h5 {
 }
 
 main.result-section {
-  margin-left: 196px;
+  margin-left: 100px;
 }/*# sourceMappingURL=style.css.map */

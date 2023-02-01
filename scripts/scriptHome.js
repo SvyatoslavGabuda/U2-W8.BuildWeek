@@ -50,11 +50,15 @@ const createAlbum = function (where, object) {
 const createCards = function (where, object) {
   where.innerHTML += `<div class="col col-3 mysong">
     <div class="card">
-      <img src=${object.album.cover_medium} class="card-img-top" alt="album cover" />
-      <div class="card-body">
-        <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="card-title">${object.title}</h5>
-        <p class="card-text">
-          ${object.album.title}
+      <img src=${
+        object.album.cover_medium
+      } class="card-img-top" alt="album cover" />
+      <div class="card-body pt-4">
+        <h5 idalbum="${
+          object.album.id
+        }" onclick=altraPag(event) class="card-title">${object.title.toLowerCase()}</h5>
+        <p class="card-text ">
+          ${object.album.title.toLowerCase()}
         </p>
         
       </div>
@@ -179,23 +183,6 @@ const artista = async function () {
   }
 };
 artista();
-
-// search
-const contenitorePrincipale = document.getElementById("contenitorePrincipale");
-const contenitoreRicerca = document.getElementById("");
-const search = async function () {
-  const inputSearch = document.getElementById("ricerca");
-
-  const query = inputSearch.value;
-  contenitorePrincipale.classList.add("d-none");
-  contenitoreRicerca.classList.remove("d-none");
-
-  const risultati = await fetchUrl(query);
-
-  risultati.forEach((song) => {
-    createCards(contenitoreRicerca, song);
-  });
-};
 
 const closeFriends_btn = document.querySelector(".show-friends");
 

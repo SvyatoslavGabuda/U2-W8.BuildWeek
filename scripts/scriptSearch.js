@@ -9,14 +9,19 @@ const showFriends = function () {
 closeFriends_btn.onclick = showFriends;
 
 // create card album
+
 const createCards = function (where, object) {
-  where.innerHTML += `<div class="col col-3 mysong m-2">
-    <div class="card">
-      <img src=${object.album.cover_medium} class="card-img-top" alt="album cover" />
-      <div class="card-body">
-        <h5 idalbum="${object.album.id}" onclick=albumPage(event) class="card-title">${object.title}</h5>
-        <p class="card-text">
-          ${object.album.title}
+  where.innerHTML += `<div class="col col-6 col-sm-4 col-md-3 mysong">
+    <div class="card m-2 mb-5">
+      <img src=${
+        object.album.cover_medium
+      } class="card-img-top" alt="album cover" />
+      <div class="card-body pt-2">
+        <h5 idalbum="${
+          object.album.id
+        }" onclick=altraPag(event) class="card-title">${object.title.toLowerCase()}</h5>
+        <p class="card-text ">
+          ${object.album.title.toLowerCase()}
         </p>
         
       </div>
