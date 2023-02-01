@@ -86,8 +86,10 @@ const createFirstSong = function (where, object) {
             <p idartist="${object.artist.id}" onclick=caricaArtista(event) class="clickableArtist"">${object.artist.name}</p>
             <p class="subtitle">Ascolta il nuovo singolo dei ${object.artist.name}!</p>
             <p>
-              <button class="button-green" role="button">Play</button> <button class="button-green" role="button">Salva</button>
-              <button class="button-green" role="button">...</button>
+              <button class="button-green" role="button">Play</button> <button class="button-black" role="button">Salva</button>
+              <button class="button-black" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+              <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+            </svg></button>
             </p>
           </div>
         </div>
