@@ -31,7 +31,7 @@ const createAlbum = function (where, object) {
   <div class="albumOrizzontali m-1">
     <div class="row g-0">
       <div class="col-md-4">
-        <img src=${object.album.cover_small} class="img-fluid rounded-start" alt="..." />
+        <img idalbum="${object.album.id}" onclick=altraPag(event) src=${object.album.cover_small} class="img-fluid rounded-start" alt="..." />
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -50,13 +50,11 @@ const createAlbum = function (where, object) {
 const createCards = function (where, object) {
   where.innerHTML += `<div class="col col-3 mysong">
     <div class="card">
-      <img src=${
-        object.album.cover_medium
-      } class="card-img-top" alt="album cover" />
+      <img idalbum="${object.album.id}" onclick=altraPag(event) src=${
+    object.album.cover_medium
+  } class="card-img-top" alt="album cover" />
       <div class="card-body pt-4">
-        <h5 idalbum="${
-          object.album.id
-        }" onclick=altraPag(event) class="card-title">${object.title.toLowerCase()}</h5>
+        <h5  class="card-title">${object.title.toLowerCase()}</h5>
         <p class="card-text ">
           ${object.album.title.toLowerCase()}
         </p>
@@ -67,7 +65,7 @@ const createCards = function (where, object) {
 };
 
 const createFirstSong = function (where, object) {
-  where.innerHTML += `<div class="col">
+  where.innerHTML += `<div class="col p-5">
     <div class="card mb-3 border-0 mainPageBg">
       <div class="row g-0">
         <div class="col-md-3 d-flex justify-content-center align-items-center bg-trasparent">

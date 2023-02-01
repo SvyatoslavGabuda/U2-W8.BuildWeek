@@ -8,6 +8,14 @@ const showFriends = function () {
 
 closeFriends_btn.onclick = showFriends;
 
+const altraPag = function (event) {
+  console.log(event.target.getAttribute("idalbum"));
+  location.assign(
+    //apicistorti
+    `../pages/pag1.html?id=${event.target.getAttribute("idalbum")}`
+  );
+};
+
 // create card album
 
 const createCards = function (where, object) {

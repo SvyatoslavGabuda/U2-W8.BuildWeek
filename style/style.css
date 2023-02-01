@@ -9,13 +9,13 @@ body {
 }
 
 nav {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   left: 0;
   top: 0;
-  width: 196px;
   background-color: #000000;
   padding: 24px;
-  height: 90%;
+  height: 100%;
 }
 nav .logo img {
   width: 130px;
@@ -129,12 +129,16 @@ nav .policies ul li a:hover, nav .policies ul li a:active, nav .policies ul li a
   color: white;
   font-weight: bold;
   font-size: 20px;
+  margin: 0;
 }
 .mainPageBg .clickableAlbum {
   color: white;
   font-weight: bold;
   font-size: 60px;
   cursor: pointer;
+}
+.mainPageBg .clickableAlbum h5 {
+  margin: 0;
 }
 .mainPageBg .clickableArtist {
   cursor: pointer;
@@ -453,18 +457,78 @@ div.intestazioneAlbum div.col-9 h5 {
 }
 
 .tracceArtista {
-  margin: 0 10px 0px 10px;
+  margin: 0 10px 10px 10px;
 }
 .tracceArtista p {
   color: rgb(159, 157, 157);
+  margin: 0;
 }
 .tracceArtista p span img {
-  border-radius: 100%;
-  aspect-ratio: 1/1;
-  width: 30px;
+  width: 40px;
+  padding-right: 5px;
 }
 .tracceArtista div.col-5 p {
   color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.bottoniArtista {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.bottoniArtista button {
+  padding: 3px 10px;
+  font-size: 1em;
+  border-radius: 100%;
+  margin-right: 10px;
+  border: none;
+  aspect-ratio: 1/1;
+  background: transparent;
+  color: rgb(159, 157, 157);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.bottoniArtista button:hover {
+  color: white;
+}
+.bottoniArtista button.play {
+  background: transparent;
+  font-size: 3em;
+  color: rgb(13, 177, 13);
+  text-align: center;
+}
+.bottoniArtista button.follow {
+  border: 2px outset rgb(159, 157, 157);
+  border-radius: 0;
+  aspect-ratio: auto;
+  padding: 10p;
+}
+.bottoniArtista button.follow:hover {
+  border: 2px inset white;
+}
+
+.braniPreferiti div.col-3 span {
+  position: absolute;
+  bottom: 0;
+  right: 18px;
+  color: rgb(13, 177, 13);
+}
+.braniPreferiti img {
+  width: 100%;
+  border-radius: 50%;
+}
+.braniPreferiti h5 {
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+.braniPreferiti p {
+  color: rgb(159, 157, 157);
   padding: 0;
   margin: 0;
 }
