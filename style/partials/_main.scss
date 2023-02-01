@@ -100,9 +100,11 @@
 }
 
 .mysong .card {
-  background-color: rgba($color: #000000, $alpha: 0);
+  background-color: rgba(255, 255, 255, 0.02);
   color: white;
+  padding: 0.8em;
   max-width: 200px;
+  height: 100%;
   img {
     border-radius: 5px;
   }
@@ -118,5 +120,9 @@
       color: grey;
       text-transform: capitalize;
     }
+  }
+  transition: all 300ms;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 }
