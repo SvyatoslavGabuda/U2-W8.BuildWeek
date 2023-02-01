@@ -121,7 +121,6 @@ const Album2 = async function () {
   try {
     let album = await fetchUrl("FooFighter");
     createAlbum(contenitoreAlbum, album[0]);
-    createAlbum(contenitoreAlbum, album[5]);
   } catch (error) {
     console.log(error);
   }
@@ -129,15 +128,41 @@ const Album2 = async function () {
 Album2();
 const Album3 = async function () {
   try {
-    let album = await fetchUrl("pink");
+    let album = await fetchUrl("Pink Floyd");
     createAlbum(contenitoreAlbum, album[0]);
-    createAlbum(contenitoreAlbum, album[9]);
-    createAlbum(contenitoreAlbum, album[15]);
   } catch (error) {
     console.log(error);
   }
 };
 Album3();
+const Album4 = async function () {
+  try {
+    let album = await fetchUrl("system of a down");
+    createAlbum(contenitoreAlbum, album[0]);
+  } catch (error) {
+    console.log(error);
+  }
+};
+Album4();
+const Album5 = async function () {
+  try {
+    let album = await fetchUrl("nickelback");
+    createAlbum(contenitoreAlbum, album[0]);
+  } catch (error) {
+    console.log(error);
+  }
+};
+Album5();
+const Album6 = async function () {
+  try {
+    let album = await fetchUrl("My Chemical Romance");
+    createAlbum(contenitoreAlbum, album[0]);
+  } catch (error) {
+    console.log(error);
+  }
+};
+Album6();
+
 const artista = async function () {
   try {
     let artista = await fetchUrl("maneskin");

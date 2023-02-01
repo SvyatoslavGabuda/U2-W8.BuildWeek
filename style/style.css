@@ -427,6 +427,10 @@ main.result-section {
   margin-left: 100px;
 }
 
+.search-icon {
+  cursor: pointer;
+}
+
 .button-green {
   background-color: #1db954;
   border-radius: 100px;
@@ -528,9 +532,12 @@ main.result-section {
 }
 
 .mysong .card {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.02);
   color: white;
+  padding: 0.8em;
   max-width: 200px;
+  height: 100%;
+  transition: all 300ms;
 }
 .mysong .card img {
   border-radius: 5px;
@@ -548,6 +555,9 @@ main.result-section {
   color: grey;
   text-transform: capitalize;
 }
+.mysong .card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
 * {
   padding: 0;
@@ -557,4 +567,9 @@ main.result-section {
 body {
   background-color: #121212;
   font-family: "Montserrat", sans-serif;
+}
+
+.paginaCorrente {
+  color: white;
+  font-weight: 600;
 }/*# sourceMappingURL=style.css.map */
