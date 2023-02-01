@@ -27,20 +27,24 @@ const fetchUrlArtist = async function () {
       console.log(tracks.data);
 
       doveMettoArtista.innerHTML += `
-       <div class="position-relative pt-4 intestazioneArtist">
-              <div class="col-12 z-0">
-                <img
-                  class="img-fluid"
-                  src=${artista.picture_big}
-                  alt="album Cover"
-                />
-              </div>
-              <div class="col-12 z-1">
+       <div class="row pt-4 ">
+
+             <div style="background-image: url(${artista.picture_big}) ;" class="intestazioneArtist">
+
+              
                 
+              
+
+             
+             <p> <i class="bi bi-shield-fill-check"></i> Artista verificato</p>
                 <h5>${artista.name}</h5>
-                <p>${artista.nb_fan}</p>
-              </div>
+                <p>${artista.nb_fan} ascoltatori mensili</p>
+              
+
             </div>
+
+            </div>
+            
             <div class="row">
               <div class="col-12">
                 <button><i class="bi bi-play-circle"></i></button>
@@ -49,40 +53,36 @@ const fetchUrlArtist = async function () {
                 <button><i class="bi bi-three-dots"></i></button>
               </div>
             </div>
+
             <div class="row">
-              <div class="col-1">
-                <p>#</p>
-              </div>
-              <div class="col-6">
-                <p>TITOLO</p>
-              </div>
-              <div class="col-3">
-                <p>RIPRODUZIONI</p>
-              </div>
-              <div class="col-2">
-                <p>DURATA</p>
-              </div>
+
+             <h2 class="text-light">Popolari</h2>
             </div>`;
 
       //   const tracks = data.tracks.data;
 
       tracks.data.forEach((el, index) => {
         doveMettoArtista.innerHTML += `
-          <div class="row">
-                <div class="col d-flex">
-                  <div class="col-1">
+          <div class="row tracceArtista">
+                
+                  <div class="col-1 d-flex justify-content-center align-items-center ">
                     <p>${index + 1}</p>
                   </div>
-                  <div class="col-6">
-                    <p>${el.title}</p>
-                    <p>${el.artist.name}</p>
-                  </div>
+                  <div class="col-5">
+                  <p></p>
+                    <p><span><img
+                    class="img-fluid"
+                    src=${el.album.cover_small}
+                    alt="album Cover"
+                  /> </span>${el.title}</p>
+                    
+                
                 </div>
                 <div class="col-3">
-                  <p>${el.rank}</p>
+                  <p class="text-end pe-3">${el.rank}</p>
                 </div>
-                <div class="col-2">
-                  <p>${returnMinute(el.duration)}</p>
+                <div class="col-3">
+                  <p class="text-end pe-4">${returnMinute(el.duration)}</p>
                 </div>
               </div>`;
       });
