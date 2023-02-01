@@ -45,6 +45,15 @@ const fetchUrlAlbum = async function () {
       const data = await res.json();
 
       doveMettiAlbum.innerHTML += `
+      <div class="position-absolute top-0 sfondo">
+                <img
+                  
+                  src=${data.cover_big}
+                  alt="album Cover"
+                />
+              </div>`;
+
+      doveMettiAlbum.innerHTML += `
        <div class="row intestazioneAlbum text-light">
               <div class="col-3">
                 <img
@@ -69,9 +78,9 @@ const fetchUrlAlbum = async function () {
       )} min</p>
               </div>
             </div>
-            <div class="row bottoniAlbum">
-              <div class="col-12">
-                <button class="play"><i class="bi bi-play-fill"></i></button>
+            <div class="row ">
+              <div class="col-12 bottoniAlbum">
+                <button class=" play"><i class="bi bi-play-circle-fill"></i></button>
                 <button  id="save" idalbum="${
                   data.id
                 }" onclick=aggiungiPreferiti(event) ><i idalbum="${
