@@ -1,12 +1,4 @@
-* {
-  padding: 0;
-  margin: 0;
-}
 
-body {
-  background-color: #121212;
-  font-family: "Montserrat", sans-serif;
-}
 
 nav {
   position: sticky;
@@ -34,7 +26,7 @@ nav {
           color: #b3b3b3;
           text-decoration: none;
           font-weight: bold;
-          font-size: 13px;
+          font-size: 12px;
 
           &:hover,
           &:active,
@@ -43,7 +35,7 @@ nav {
           }
 
           .fa {
-            font-size: 20px;
+            font-size: $fontsizeMain;
             margin-right: 10px;
 
             &:hover,
@@ -64,7 +56,8 @@ nav {
       a {
         color: #858080;
         text-decoration: none;
-        font-size: 10px;
+        font-size: $fontsizeMain;
+        
       }
     }
   }
@@ -80,7 +73,7 @@ nav {
           color: #b3b3b3;
           font-weight: 500;
           text-decoration: none;
-          font-size: 10px;
+          font-size: $fontsizeMain;
 
           &:hover,
           &:active,

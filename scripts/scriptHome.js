@@ -65,9 +65,9 @@ const createCards = function (where, object) {
 };
 
 const createFirstSong = function (where, object) {
-  where.innerHTML += `<div class="col p-5">
+  where.innerHTML += `<div class="col ">
     <div class="card mb-3 border-0 mainPageBg">
-      <div class="row g-0">
+      <div class="row g-0 p-5">
         <div class="col-md-3 d-flex justify-content-center align-items-center bg-trasparent">
           <img
             src=${object.album.cover_big}
@@ -75,7 +75,7 @@ const createFirstSong = function (where, object) {
             alt="album cover"
           />
         </div>
-        <div class="col-md-9 mainPageBg">
+        <div class="col-md-9 ">
           <div
             class="d-flex flex-column justify-content-between h-100 ps-3"
           >
