@@ -9,13 +9,13 @@ body {
 }
 
 nav {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   left: 0;
   top: 0;
-  width: 196px;
   background-color: #000000;
   padding: 24px;
-  height: 90%;
+  height: 100%;
 }
 nav .logo img {
   width: 130px;
@@ -129,12 +129,16 @@ nav .policies ul li a:hover, nav .policies ul li a:active, nav .policies ul li a
   color: white;
   font-weight: bold;
   font-size: 20px;
+  margin: 0;
 }
 .mainPageBg .clickableAlbum {
   color: white;
   font-weight: bold;
   font-size: 60px;
   cursor: pointer;
+}
+.mainPageBg .clickableAlbum h5 {
+  margin: 0;
 }
 .mainPageBg .clickableArtist {
   cursor: pointer;

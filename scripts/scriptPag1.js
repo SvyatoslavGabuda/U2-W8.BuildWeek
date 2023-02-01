@@ -24,17 +24,23 @@ const caricaArtista = function (event) {
 const preferiti = [];
 window.onload = () => {
   const arrayOfID = JSON.parse(localStorage.getItem("preferiti"));
-  arrayOfID.forEach((el) => {
-    preferiti.push(el);
-  });
+  if (localStorage.getItem("preferiti")) {
+    arrayOfID.forEach((el) => {
+      preferiti.push(el);
+    });
+  }
 };
 const aggiungiPreferiti = function (event) {
   console.log("cliccato");
   console.log(event);
-  preferiti.push(event.target.getAttribute("idalbum"));
-  console.log(event.target.getAttribute("idalbum"));
-  console.log(preferiti);
-  localStorage.setItem("preferiti", JSON.stringify(preferiti));
+  if (preferiti.includes(event.target.getAttribute("idalbum"))) {
+    console.log("c'e gia");
+  } else {
+    preferiti.push(event.target.getAttribute("idalbum"));
+    console.log(event.target.getAttribute("idalbum"));
+    console.log(preferiti);
+    localStorage.setItem("preferiti", JSON.stringify(preferiti));
+  }
 };
 
 const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album";

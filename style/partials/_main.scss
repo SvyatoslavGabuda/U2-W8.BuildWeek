@@ -58,12 +58,16 @@
     color: white;
     font-weight: bold;
     font-size: 20px;
+    margin: 0;
   }
   .clickableAlbum {
     color: white;
     font-weight: bold;
     font-size: 60px;
     cursor: pointer;
+    h5{
+      margin: 0;
+    }
   }
   .clickableArtist {
     cursor: pointer;

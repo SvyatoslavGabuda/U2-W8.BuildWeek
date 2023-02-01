@@ -65,7 +65,7 @@ const createCards = function (where, object) {
 };
 
 const createFirstSong = function (where, object) {
-  where.innerHTML += `<div class="col">
+  where.innerHTML += `<div class="col p-5">
     <div class="card mb-3 border-0 mainPageBg">
       <div class="row g-0">
         <div class="col-md-3 d-flex justify-content-center align-items-center bg-trasparent">
