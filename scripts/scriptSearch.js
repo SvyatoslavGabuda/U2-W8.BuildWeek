@@ -27,18 +27,21 @@ const createCards = function (where, object) {
 const search_icon = document.querySelector(".search-icon");
 const search = async function () {
   const search_results = document.querySelector(".results");
-  search_results.innerHTML = ``;
   let input = document.querySelector(".searchBar");
-  console.log(input.value);
-  let res = await fetch(
-    "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + input.value
-  );
-  let data = await res.json();
-  console.log(data);
 
-  data.data.forEach((card) => {
-    createCards(search_results, card);
-  });
+  if (input.value.trim()) {
+    search_results.innerHTML = ``;
+    let res = await fetch(
+      "https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
+        input.value.trim()
+    );
+    let data = await res.json();
+    console.log(data);
+
+    data.data.forEach((card) => {
+      createCards(search_results, card);
+    });
+  }
 };
 
 search_icon.onclick = search;
