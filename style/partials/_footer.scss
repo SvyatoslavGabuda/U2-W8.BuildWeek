@@ -1,6 +1,7 @@
 footer{
   position: fixed;
   bottom: 0;
+  
 }
   .player {
     height: 95vh;
@@ -18,16 +19,6 @@ footer{
     margin-top: 25px;
   }
    
-  .track-art {
-    margin: 25px;
-    height: 250px;
-    width: 250px;
-    background-image: URL(
-       "https://source.unsplash.com/Qrspubmx6kE/640x360");
-    background-size: cover;
-    background-position: center;
-    border-radius: 15%;
-  }
    
 
   .now-playing {
@@ -54,9 +45,11 @@ footer{
   .playpause-track,
   .prev-track,
   .next-track {
-    padding: 25px;
+   
     opacity: 0.8;
     transition: opacity .2s;
+    color: white;
+    
   }
    
 
@@ -64,12 +57,13 @@ footer{
   .prev-track:hover,
   .next-track:hover {
     opacity: 1.0;
+    color: white;
   }
    
 
   .slider_container {
-    width: 75%;
-    max-width: 400px;
+    
+    max-width: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
