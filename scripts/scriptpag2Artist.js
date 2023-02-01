@@ -23,6 +23,7 @@ const fetchUrlArtist = async function () {
       let tracklist = await fetch(artista.tracklist);
       console.log(tracklist);
       const tracks = await tracklist.json();
+      console.log(tracks);
       console.log(tracks.data);
 
       doveMettoArtista.innerHTML += `
