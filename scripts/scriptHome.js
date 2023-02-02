@@ -42,7 +42,7 @@ const createAlbum = function (where, object) {
         <div class="card-body d-flex align-item-center justify-content-between">
           <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="card-title ps-1">${object.album.title}</h5>
           
-        <button class="play d-none"><i class="bi bi-play-circle-fill"></i></button>
+        <button class="play"><i class="bi bi-play-circle-fill"></i></button>
         
         </div>
       </div>

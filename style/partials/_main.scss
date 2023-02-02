@@ -97,9 +97,12 @@
     align-items: center;
   }
   div.card-body {
+    button.play {
+      opacity: 0;
+    }
     &:hover{
       button{
-        display: block;
+        opacity: 1;
       }
     }
     white-space: nowrap;
