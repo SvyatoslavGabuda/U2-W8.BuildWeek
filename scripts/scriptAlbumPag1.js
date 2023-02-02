@@ -9,10 +9,14 @@ const doveMettiAlbum = document.getElementById("albumCaricati");
 
 const returnMinute = function (sec) {
   const minute = Math.floor(sec / 60);
-  const restSeconds = sec - minute * 60;
+  let restSeconds = sec - minute * 60;
+  if (restSeconds < 10) {
+    restSeconds = "0" + restSeconds;
+  }
   const time = `${minute}:${restSeconds}`;
   return time;
 };
+// Generare le playlist di Lidia
 const playlistLida = document.getElementById("playlistLidia");
 const playlistNames = [
   "Grazie a Lidia per la playlist <3",
@@ -58,10 +62,7 @@ playlistNames.forEach((el) => {
 
 const caricaArtista = function (event) {
   console.log(event);
-  location.assign(
-    //apicistorti
-    `../pages/artist.html?id=${event.target.getAttribute("idartist")}`
-  );
+  location.assign(`../pages/artist.html?id=${event.target.getAttribute("idartist")}`);
 };
 const preferiti = [];
 window.onload = () => {
@@ -103,15 +104,6 @@ const nextTrack = function (object, index) {
   index++;
 };
 
-// const playSong = function (song) {
-//   let audio = document.querySelector("audio");
-//   audio.setAttribute("src", song);
-//   console.dir(audio);
-// };
-// playSong(
-//   "https://cdns-preview-9.dzcdn.net/stream/c-9de56c7f6946b36be32c3caa885e46dd-5.mp3"
-// );
-
 const playpauseTrack = function () {
   const audio = document.querySelector("audio");
   const play_pause_btn = document.querySelector(".playpause-track");
@@ -138,12 +130,6 @@ const fetchUrlAlbum = async function () {
     if (res.ok) {
       const data = await res.json();
 
-      // song_track.albumTitle = data.tracks.data[0].album.title;
-      // song_track.artist = data.
-      // song_track.title = data.tracks.title;
-
-      // console.log(song_track.albumTitle);
-
       doveMettiAlbum.innerHTML += `
       <div class="position-absolute top-0 sfondo">
                 <img
@@ -169,23 +155,17 @@ const fetchUrlAlbum = async function () {
                 class="img-fluid"
                 src=${data.artist.picture_small}
                 alt="album Cover"
-              /> </span><span idartist="${
-                data.artist.id
-              }" onclick=caricaArtista(event)>${data.artist.name}</span>, ${
-        data.release_date
-      },${data.tracks.data.length} tracce, ${returnMinute(
-        data.duration
-      )} min</p>
+              /> </span><span class="cursorP" idartist="${data.artist.id}" onclick=caricaArtista(event)>${
+        data.artist.name
+      }</span>, ${data.release_date},${data.tracks.data.length} tracce, ${returnMinute(data.duration)} min</p>
               </div>
             </div>
             <div class="row ">
               <div class="col-12 bottoniAlbum">
                 <button class="play" onclick=populatePlayer()><i class="bi bi-play-circle-fill"></i></button>
-                <button  id="save" idalbum="${
-                  data.id
-                }" onclick=aggiungiPreferiti(event) ><i idalbum="${
+                <button  id="save" idalbum="${data.id}" onclick=aggiungiPreferiti(event) ><i idalbum="${
         data.id
-      }" class="bi bi-heart"></i></button>
+      }" class="bi bi-heart cursorP"></i></button>
                 <button><i class="bi bi-arrow-down-circle"></i></button>
                 <button><i class="bi bi-three-dots"></i></button>
               </div>
@@ -205,32 +185,9 @@ const fetchUrlAlbum = async function () {
               </div>
             </div>`;
 
-      // onclick=aggiungiPreferiti(event)
-      // const saveBtn = document.getElementById("save");
-      // console.log(saveBtn);
-      // const aggiungiPreferiti = function (event) {
-      //   preferiti.push(event.target.getAttribute("idalbum"));
-      //   console.log(event.currentTarget.getAttribute("idalbum"));
-      //   console.log(preferiti);
-      //   localStorage.setItem("preferiti", JSON.stringify(preferiti));
-      // };
-      // saveBtn.onclick = aggiungiPreferiti;
-
       const tracks = data.tracks.data;
-      // populatePlayer(tracks[0]);
       nextTrack(tracks, 0);
-      // let track = {
-      //   title: data.title,
-      //   cover: data.cover_small,
-      //   artist: data.artist.name,
-      //   tracks: [],
-      // };
       tracks.forEach((el, index) => {
-        // album.tracks[index] = Object.assign({});
-        // album.tracks[index].title = el.title_short;
-        // album.tracks[index].preview = el.preview;
-        // album.tracks[index].duration = el.duration;
-
         doveMettiAlbum.innerHTML += `
         <div class="row tracceAlbum">
               
@@ -239,9 +196,7 @@ const fetchUrlAlbum = async function () {
                 </div>
                 <div class="col-5">
                   <p >${el.title}</p>
-                  <p  idartist="${el.artist.id}" onclick=caricaArtista(event)>${
-          el.artist.name
-        }</p>
+                  <p class="cursorP" idartist="${el.artist.id}" onclick=caricaArtista(event)>${el.artist.name}</p>
                 
               </div>
               <div class="col-3">

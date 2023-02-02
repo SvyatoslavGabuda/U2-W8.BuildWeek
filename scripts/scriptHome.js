@@ -2,6 +2,7 @@ const ulrDeezer = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 const contenitoreFirstSong = document.getElementById("firstSong");
 const contenitoreAlbum = document.getElementById("albums");
 const contenitoreAltro = document.getElementById("altro");
+// Generare le playlist di Lidia
 const playlistLida = document.getElementById("playlistLidia");
 const playlistNames = [
   "Grazie a Lidia per la playlist <3",
@@ -47,10 +48,7 @@ playlistNames.forEach((el) => {
 
 const altraPag = function (event) {
   console.log(event.target.getAttribute("idalbum"));
-  location.assign(
-    //apicistorti
-    `../pages/albumPage.html?id=${event.target.getAttribute("idalbum")}`
-  );
+  location.assign(`../pages/albumPage.html?id=${event.target.getAttribute("idalbum")}`);
 };
 
 const returnMinute = function (sec) {
@@ -62,10 +60,7 @@ const returnMinute = function (sec) {
 
 const caricaArtista = function (event) {
   console.log(event);
-  location.assign(
-    //apicistorti
-    `../pages/artist.html?id=${event.target.getAttribute("idartist")}`
-  );
+  location.assign(`../pages/artist.html?id=${event.target.getAttribute("idartist")}`);
 };
 
 const createAlbum = function (where, object) {
@@ -73,11 +68,11 @@ const createAlbum = function (where, object) {
   <div  class="albumOrizzontali m-1">
     <div class="row g-0 align-items-center">
       <div class="col-2">
-        <img idalbum="${object.album.id}" onclick=altraPag(event) src=${object.album.cover_small} class="img-fluid rounded-start" alt="..." />
+        <img idalbum="${object.album.id}" onclick=altraPag(event) src=${object.album.cover_small} class="img-fluid rounded-start cursorP" alt="..." />
       </div>
       <div class="col-10 d-flex align-items-center">
         <div class="card-body d-flex align-items-center justify-content-between">
-          <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="card-title ps-1">${object.album.title}</h5>
+          <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="card-title ps-1 cursorP">${object.album.title}</h5>
           
         <button class="play"><i class="bi bi-play-circle-fill"></i></button>
         
@@ -93,7 +88,7 @@ const createCards = function (where, object) {
     <div class="card">
       <img idalbum="${object.album.id}" onclick=altraPag(event) src=${
     object.album.cover_medium
-  } class="card-img-top" alt="album cover" />
+  } class="card-img-top cursorP" alt="album cover" />
       <div class="card-body pt-4">
         <h5  class="card-title">${object.title.toLowerCase()}</h5>
         <p class="card-text ">
@@ -121,8 +116,8 @@ const createFirstSong = function (where, object) {
             class="d-flex flex-column justify-content-between h-100 ps-3"
           >
             <p class="">ALBUM</p>
-            <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="clickableAlbum">${object.album.title}</h5>
-            <p idartist="${object.artist.id}" onclick=caricaArtista(event) class="clickableArtist"">${object.artist.name}</p>
+            <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="clickableAlbum cursorP">${object.album.title}</h5>
+            <p idartist="${object.artist.id}" onclick=caricaArtista(event) class="clickableArtist cursorP">${object.artist.name}</p>
             <p class="subtitle">Ascolta il nuovo singolo dei ${object.artist.name}!</p>
             <p>
               <button class="button-green" role="button">Play</button> <button class="button-black" role="button">Salva</button>
@@ -254,7 +249,6 @@ const closeFriends_btn = document.querySelector(".show-friends");
 
 const showFriends = function () {
   const aside = document.querySelector("aside");
-  // aside.classList.toggle("d-none");
   aside.classList.toggle("d-xl-block");
 };
 

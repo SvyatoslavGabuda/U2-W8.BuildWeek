@@ -1,3 +1,4 @@
+// Generare le playlist di Lidia
 const containerLikedSongs = document.getElementById("likedSongs");
 const playlistLida = document.getElementById("playlistLidia");
 const playlistNames = [
@@ -47,7 +48,7 @@ const createCards = function (where, object) {
       <div class="card">
         <img src=${object.album.cover_medium} class="card-img-top" alt="album cover" />
         <div class="card-body">
-          <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="card-title">${object.title}</h5>
+          <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="card-title cursorP">${object.title}</h5>
           <p class="card-text">
             ${object.album.title}
           </p>

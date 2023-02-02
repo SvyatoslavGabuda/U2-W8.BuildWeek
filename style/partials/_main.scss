@@ -1,5 +1,4 @@
 .button-green {
-  
   background-color: #1db954;
   border-radius: 100px;
   box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset, rgba(44, 187, 99, 0.15) 0 1px 2px,
@@ -55,7 +54,6 @@
 }
 
 .mainPageBg {
-  // background: linear-gradient(45deg, hsla(180, 3%, 6%, 1) 50%, hsla(120, 5%, 15%, 1) 100%);
   background: linear-gradient(45deg, hsla(0, 0%, 0%, 1) 43%, hsla(0, 0%, 19%, 1) 100%);
   p {
     color: white;
@@ -68,7 +66,7 @@
     font-weight: bold;
     font-size: 60px;
     cursor: pointer;
-    h5{
+    h5 {
       margin: 0;
       font-size: $fontsizeMain;
     }
@@ -90,7 +88,6 @@
 }
 .albumOrizzontali {
   border-radius: 5px;
-  // margin: 2px 4px;
   background: linear-gradient(270deg, rgb(209, 206, 206, 0.2), rgb(36, 36, 36, 0.5));
   div.col-md-8 {
     display: flex;
@@ -99,27 +96,25 @@
   div.card-body {
     button.play {
       opacity: 0;
-      background:transparent;
-        
-        color: #1db954;
-        text-align: center;
-        cursor: pointer;
-        user-select: none;
-        padding: 0;
-        font-size: 1.8em;
-        border-radius: 100%;
-        border: none;
-        padding-right: 5px;
-        
+      background: transparent;
+      color: #1db954;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      padding: 0;
+      font-size: 1.8em;
+      border-radius: 100%;
+      border: none;
+      padding-right: 5px;
     }
-    &:hover{
-      button{
+    &:hover {
+      button {
         opacity: 1;
       }
     }
     white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
     h5 {
       color: white;
       font-weight: 500;
@@ -135,7 +130,6 @@
   background-color: rgba(255, 255, 255, 0.02);
   color: white;
   padding: 0.8em;
-  // max-width: 200px;
   height: 100%;
   img {
     border-radius: 5px;
@@ -159,17 +153,14 @@
     background-color: rgba(255, 255, 255, 0.1);
   }
 }
-main{
+main {
   height: 89vh;
   margin-bottom: 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  @media screen and (max-width:768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 250px;
-    
-    height: 100%;
-  
-    
-  }
 
+    height: 100%;
+  }
 }

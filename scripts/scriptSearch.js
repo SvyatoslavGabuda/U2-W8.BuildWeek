@@ -1,5 +1,4 @@
-// friends section
-const closeFriends_btn = document.querySelector(".show-friends");
+// Generare le playlist di Lidia
 const playlistLida = document.getElementById("playlistLidia");
 const playlistNames = [
   "Grazie a Lidia per la playlist <3",
@@ -43,6 +42,8 @@ playlistNames.forEach((el) => {
 </li>`;
 });
 
+// Apri/chiudi sidebar a dx
+const closeFriends_btn = document.querySelector(".show-friends");
 const showFriends = function () {
   const aside = document.querySelector("aside");
   aside.classList.toggle("d-none");
@@ -50,26 +51,21 @@ const showFriends = function () {
 
 closeFriends_btn.onclick = showFriends;
 
+// Rimanda alla pagina album
 const altraPag = function (event) {
   console.log(event.target.getAttribute("idalbum"));
-  location.assign(
-    //apicistorti
-    `../pages/albumPage.html?id=${event.target.getAttribute("idalbum")}`
-  );
+  location.assign(`../pages/albumPage.html?id=${event.target.getAttribute("idalbum")}`);
 };
 
-// create card album
-
+// Crea le cards album
 const createCards = function (where, object) {
   where.innerHTML += `<div class="col col-6 mb-5 col-sm-4 col-md-3 mysong">
     <div class="card m-2">
-      <img src=${
-        object.album.cover_medium
-      } class="card-img-top" alt="album cover" />
+      <img src=${object.album.cover_medium} class="card-img-top" alt="album cover" />
       <div class="card-body pt-2">
         <h5 idalbum="${
           object.album.id
-        }" onclick=altraPag(event) class="card-title">${object.title.toLowerCase()}</h5>
+        }" onclick=altraPag(event) class="card-title cursorP">${object.title.toLowerCase()}</h5>
         <p class="card-text ">
           ${object.album.title.toLowerCase()}
         </p>
@@ -78,7 +74,7 @@ const createCards = function (where, object) {
     </div>
   </div>`;
 };
-// search
+// Funzione Search
 const search_icon = document.querySelector(".search-icon");
 const search = async function () {
   const search_results = document.querySelector(".results");
@@ -86,10 +82,7 @@ const search = async function () {
 
   if (input.value.trim()) {
     search_results.innerHTML = ``;
-    let res = await fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
-        input.value.trim()
-    );
+    let res = await fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + input.value.trim());
     let data = await res.json();
     console.log(data);
 
