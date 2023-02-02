@@ -64,15 +64,16 @@ nav .policies ul li a:hover, nav .policies ul li a:active, nav .policies ul li a
 
 footer {
   position: fixed;
-  width: 100%;
   bottom: 0;
+  width: 100%;
+  background-color: black;
+  padding: 1em;
 }
 
 .player {
   display: flex;
   align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .details {
@@ -549,6 +550,9 @@ main.result-section {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.albumOrizzontali div.card-body:hover button {
+  display: block;
 }
 .albumOrizzontali div.card-body h5 {
   color: white;

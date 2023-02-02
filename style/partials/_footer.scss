@@ -1,13 +1,16 @@
-footer {
+footer{
   position: fixed;
-  width: 100%;
   bottom: 0;
+  width: 100%;
+  background-color: black;
+  padding: 1em;
 }
 .player {
   display: flex;
   align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+ 
+  
 }
 
 .details {
