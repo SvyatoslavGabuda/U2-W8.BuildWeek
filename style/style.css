@@ -699,6 +699,7 @@ main {
 @media screen and (max-width: 768px) {
   main {
     margin-bottom: 250px;
+    height: 100%;
   }
 }
 
