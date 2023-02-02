@@ -115,6 +115,10 @@
             bottom: 0;
             right: 18px;
             color:rgb(13, 177, 13) ;
+            @media  screen and (max-width:900px) {
+                bottom: 10px;
+                right: 10px;
+            }
         }
     }
     

@@ -54,24 +54,18 @@ const fetchUrlArtist = async function () {
               </div>
             </div>
 
-            <div class="row py-4 ps-4">
-            <div class="col-8">
-
-             <h2 class="text-light fs-4 fw-bolder">Popolari</h2>
-             </div>
-             <div class="col-4">
-             <h2 class="text-light fs-4 fw-bolder">Brani che ti piacciono</h2>
-             </div>
-
-            </div>`;
+            `;
 
       //   const tracks = data.tracks.data;
 
       const contrainerTracce = document.getElementById("tracce");
       const containerBraniPreferiti = document.getElementById("braniPreferiti");
-      containerBraniPreferiti.innerHTML += `<div class="row p-0 braniPreferiti">
-      <div class="col-3 position-relative"><img src=${artista.picture_small} alt="" />
-      <span ><i class="bi bi-check-circle-fill"></i></span></div>
+      containerBraniPreferiti.innerHTML += `
+      <div class="row p-0 braniPreferiti">
+      <div class="col-3 position-relative">
+      <img src=${artista.picture_medium} alt="" />
+      <span ><i class="bi bi-check-circle-fill"></i></span>
+      </div>
       <div class="col-9 d-flex flex-column justify-content-center">
         <h5>Hai messo Mi piace a ${artista.nb_album} Brani</h5>
         <p>Di ${artista.name}</p>
