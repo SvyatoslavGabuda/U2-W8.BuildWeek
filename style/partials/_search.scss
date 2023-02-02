@@ -2,9 +2,14 @@
   border: 0;
   border-radius: 1em;
   padding: 0.2em 1em;
+  width: 50%;
+  @media screen and (max-width:768px) {
+    width: 80%;
+    
+  }
 }
 main.result-section {
-  margin-left: 100px;
+  // margin-left: 100px;
 }
 
 .search-icon {

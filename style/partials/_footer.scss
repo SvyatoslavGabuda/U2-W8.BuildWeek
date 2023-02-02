@@ -2,17 +2,51 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+  height: 11vh;
+  @media screen and (max-width:768px) {
+    bottom: 90px;
+    
+  }
 }
 .player {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   background-color: black;
+  height: 11vh;
+  @media screen and (max-width:768px) {
+    justify-content: center !important; 
+    
+  }
 }
 
 .details {
   display: flex;
   align-items: center;
+  height: 11vh;
+  @media screen and (max-width:768px) {
+    display: none;
+    
+  }
+  .cover {
+    height: 11vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .track-name{
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .track-artist{
+    font-size: 10px;
+  }
+  img{
+    height: fit-content;
+    
+  }
 }
 
 .now-playing {
@@ -55,6 +89,15 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  
+}
+.slider_container2{
+  @media screen and (max-width:768px) {
+    display: none;
+    
+  }
+  
+  
 }
 
 .seek_slider,

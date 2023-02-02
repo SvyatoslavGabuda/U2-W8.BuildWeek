@@ -34,7 +34,7 @@ div.intestazioneAlbum{
         flex-direction: column;
         justify-content: end;
         p{
-            font-size: 0.6em;
+            font-size: $fontsizeMain;
             padding: 0;
             margin: 0;
             margin-top: 20px;
@@ -67,6 +67,7 @@ div.intestazioneAlbum{
     }
 }
 .bottoniAlbum{
+    
     padding: 20px 30px;
     display: flex;
     align-items: center;
