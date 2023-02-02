@@ -42,13 +42,52 @@ const aggiungiPreferiti = function (event) {
     localStorage.setItem("preferiti", JSON.stringify(preferiti));
   }
 };
+const populatePlayer = function (song) {
+  const artist_name = document.querySelector(".track-artist");
+  const track_name = document.querySelector(".track-artist");
+
+  artist_name.textContent = song.artist;
+};
+
+// const playSong = function (song) {
+//   let audio = document.querySelector("audio");
+//   audio.setAttribute("src", song);
+//   console.dir(audio);
+// };
+// playSong(
+//   "https://cdns-preview-9.dzcdn.net/stream/c-9de56c7f6946b36be32c3caa885e46dd-5.mp3"
+// );
+
+const playpauseTrack = function () {
+  let audio = document.querySelector("audio");
+  let play_pause_btn = document.querySelector(".playpause-track");
+
+  if (audio.paused) {
+    audio.play();
+    play_pause_btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+  </svg>`;
+  } else {
+    audio.pause();
+    play_pause_btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pause-circle-fill" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5zm3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5z"/>
+  </svg>`;
+  }
+};
 
 const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album";
+
 const fetchUrlAlbum = async function () {
   try {
     let res = await fetch(`${urlAlbum}/${ourID}`);
     if (res.ok) {
       const data = await res.json();
+
+      // song_track.albumTitle = data.tracks.data[0].album.title;
+      // song_track.artist = data.
+      // song_track.title = data.tracks.title;
+
+      // console.log(song_track.albumTitle);
 
       doveMettiAlbum.innerHTML += `
       <div class="position-absolute top-0 sfondo">
@@ -86,7 +125,7 @@ const fetchUrlAlbum = async function () {
             </div>
             <div class="row ">
               <div class="col-12 bottoniAlbum">
-                <button class=" play"><i class="bi bi-play-circle-fill"></i></button>
+                <button class="play" onclick=populatePlayer()><i class="bi bi-play-circle-fill"></i></button>
                 <button  id="save" idalbum="${
                   data.id
                 }" onclick=aggiungiPreferiti(event) ><i idalbum="${
@@ -123,8 +162,18 @@ const fetchUrlAlbum = async function () {
       // saveBtn.onclick = aggiungiPreferiti;
 
       const tracks = data.tracks.data;
-
+      let album = {
+        title: data.title,
+        cover: data.cover_small,
+        artist: data.artist.name,
+        tracks: [],
+      };
       tracks.forEach((el, index) => {
+        album.tracks[index] = Object.assign({});
+        album.tracks[index].title = el.title_short;
+        album.tracks[index].preview = el.preview;
+        album.tracks[index].duration = el.duration;
+
         doveMettiAlbum.innerHTML += `
         <div class="row tracceAlbum">
               
