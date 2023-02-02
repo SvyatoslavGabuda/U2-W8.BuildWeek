@@ -1,4 +1,4 @@
-const ulrArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist";
+// Generare le playlist di Lidia
 const playlistLida = document.getElementById("playlistLidia");
 const playlistNames = [
   "Grazie a Lidia per la playlist <3",
@@ -36,21 +36,24 @@ const playlistNames = [
   "ma(ncanza) che cazzo ne so io (gen-feb 2021)",
 ];
 
+// Funzione che prende parametro ID dalla pagina precedente e genera un album
 playlistNames.forEach((el) => {
   playlistLida.innerHTML += `<li>
   <a href="#">${el}</a>
-</li>`;
+  </li>`;
 });
 
+const ulrArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist";
 let params = new URLSearchParams(location.search);
-// console.log(params);
 
 let ourIDArtist = params.get("id");
-// console.log(ourIDArtist);
 
 const returnMinute = function (sec) {
   const minute = Math.floor(sec / 60);
-  const restSeconds = sec - minute * 60;
+  let restSeconds = sec - minute * 60;
+  if (restSeconds < 10) {
+    restSeconds = "0" + restSeconds;
+  }
   const time = `${minute}:${restSeconds}`;
   return time;
 };
@@ -61,44 +64,24 @@ const fetchUrlArtist = async function () {
     let res = await fetch(`${ulrArtist}/${ourIDArtist}`);
     if (res.ok) {
       const artista = await res.json();
-      // console.log(artista);
       let tracklist = await fetch(artista.tracklist);
-      // console.log(tracklist);
       const tracks = await tracklist.json();
-      // console.log(tracks);
-      // console.log(tracks.data);
 
       doveMettoArtista.innerHTML += `
        <div class="row pt-4 ">
-
              <div style="background-image: url(${artista.picture_big}) ;" class="intestazioneArtist">
-
-              
-                
-              
-
-             
              <p> <i class="bi bi-patch-check-fill"></i> Artista verificato</p>
                 <h5>${artista.name}</h5>
                 <p class="mb-3">${artista.nb_fan} ascoltatori mensili</p>
-              
-
             </div>
-
             </div>
-            
             <div class="row ps-4">
               <div class="col-12 bottoniArtista ">
                 <button class="play"><i class="bi bi-play-circle-fill"></i></button>
-                
                 <button class="follow">FOLLOWING</button>
                 <button><i class="bi bi-three-dots"></i></button>
               </div>
-            </div>
-
-            `;
-
-      //   const tracks = data.tracks.data;
+            </div>`;
 
       const contrainerTracce = document.getElementById("tracce");
       const containerBraniPreferiti = document.getElementById("braniPreferiti");
@@ -112,10 +95,7 @@ const fetchUrlArtist = async function () {
         <h5>Hai messo Mi piace a ${artista.nb_album} Brani</h5>
         <p>Di ${artista.name}</p>
       </div>
-    </div>
-
-
-      `;
+    </div>`;
 
       tracks.data.forEach((el, index) => {
         contrainerTracce.innerHTML += `

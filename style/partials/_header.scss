@@ -1,36 +1,29 @@
-#playlistLidia{
+#playlistLidia {
   overflow-y: scroll;
   height: 300px;
 }
-/* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px rgb(51, 51, 51); 
-  border-radius: 10px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgb(85, 85, 85); 
+  box-shadow: inset 0 0 5px rgb(51, 51, 51);
   border-radius: 10px;
 }
 
-/* Handle on hover */
+::-webkit-scrollbar-thumb {
+  background: rgb(85, 85, 85);
+  border-radius: 10px;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: $verdeSpotify;
 }
-
 
 nav {
   position: sticky;
   left: 0;
   top: 0;
-  // bottom: 0;
-  // width: 100%;
   background-color: #000000;
   padding: 24px;
   height: 89vh;
@@ -82,30 +75,6 @@ nav {
         color: #858080;
         text-decoration: none;
         font-size: $fontsizeMain;
-        
-      }
-    }
-  }
-
-  .policies {
-    position: absolute;
-    bottom: 20px;
-    ul {
-      list-style: none;
-      li {
-        padding-bottom: 5px;
-        a {
-          color: #b3b3b3;
-          font-weight: 500;
-          text-decoration: none;
-          font-size: $fontsizeMain;
-
-          &:hover,
-          &:active,
-          &:focus {
-            text-decoration: underline;
-          }
-        }
       }
     }
   }

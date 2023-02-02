@@ -3,21 +3,20 @@ footer {
   width: 100%;
   bottom: 0;
   height: 11vh;
-  @media screen and (max-width:768px) {
+  @media screen and (max-width: 768px) {
     bottom: 90px;
-    
   }
 }
 .player {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  background-color: black;
+  border-top: 1px solid rgb(40, 40, 40, 0.8);
+  background-color: rgb(24, 24, 24, 0.8);
   height: 11vh;
-  @media screen and (max-width:768px) {
-    justify-content: center !important; 
-    
+  @media screen and (max-width: 768px) {
+    justify-content: center !important;
+    background-color: rgb(40, 40, 40, 0.8);
   }
 }
 
@@ -25,9 +24,8 @@ footer {
   display: flex;
   align-items: center;
   height: 11vh;
-  @media screen and (max-width:768px) {
+  @media screen and (max-width: 768px) {
     display: none;
-    
   }
   .cover {
     height: 11vh;
@@ -36,16 +34,15 @@ footer {
     justify-content: center;
     align-items: center;
   }
-  .track-name{
+  .track-name {
     font-size: 15px;
     font-weight: 700;
   }
-  .track-artist{
+  .track-artist {
     font-size: 10px;
   }
-  img{
+  img {
     height: fit-content;
-    
   }
 }
 
@@ -89,15 +86,11 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-.slider_container2{
-  @media screen and (max-width:768px) {
+.slider_container2 {
+  @media screen and (max-width: 768px) {
     display: none;
-    
   }
-  
-  
 }
 
 .seek_slider,
