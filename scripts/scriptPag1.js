@@ -42,17 +42,17 @@ const aggiungiPreferiti = function (event) {
     localStorage.setItem("preferiti", JSON.stringify(preferiti));
   }
 };
-const populatePlayer = function (track) {
+const populatePlayer = function (artist, title, preview, cover) {
   const artist_name = document.querySelector(".track-artist");
   const track_name = document.querySelector(".track-name");
   const audio = document.querySelector("audio");
   const image = document.querySelector(".cover img");
 
-  artist_name.textContent = track.artist.name;
-  track_name.textContent = track.title;
+  artist_name.textContent = artist;
+  track_name.textContent = title;
 
-  audio.setAttribute("src", track.preview);
-  image.setAttribute("src", track.album.cover_medium);
+  audio.setAttribute("src", preview);
+  image.setAttribute("src", cover);
 };
 let index = 0;
 
@@ -138,7 +138,11 @@ const fetchUrlAlbum = async function () {
             </div>
             <div class="row ">
               <div class="col-12 bottoniAlbum">
-                <button class="play" onclick=populatePlayer()><i class="bi bi-play-circle-fill"></i></button>
+                <button class="play" onclick=populatePlayer(${
+                  data.artist.name
+                },${data.tracks.data[0].title},${data.tracks.data[0].preview},${
+        data.cover_medium
+      })><i class="bi bi-play-circle-fill"></i></button>
                 <button  id="save" idalbum="${
                   data.id
                 }" onclick=aggiungiPreferiti(event) ><i idalbum="${
@@ -176,7 +180,7 @@ const fetchUrlAlbum = async function () {
 
       const tracks = data.tracks.data;
       // populatePlayer(tracks[0]);
-      nextTrack(tracks, 0);
+      // nextTrack(tracks, 0);
       // let track = {
       //   title: data.title,
       //   cover: data.cover_small,
