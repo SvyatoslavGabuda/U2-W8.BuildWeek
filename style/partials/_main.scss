@@ -97,6 +97,11 @@
     align-items: center;
   }
   div.card-body {
+    &:hover{
+      button{
+        display: block;
+      }
+    }
     white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;

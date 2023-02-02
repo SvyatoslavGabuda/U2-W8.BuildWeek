@@ -26,19 +26,23 @@ const caricaArtista = function (event) {
   );
 };
 
+const playHover = function (event) {
+  console.log("ciao", event.target);
+  // const btn = document.querySelector("");
+};
+
 const createAlbum = function (where, object) {
   where.innerHTML += `<div class="col ">
-  <div class="albumOrizzontali m-1">
+  <div onmouseover=playHover(event) class="albumOrizzontali m-1">
     <div class="row g-0">
-      <div class="col-4">
+      <div class="col-2">
         <img idalbum="${object.album.id}" onclick=altraPag(event) src=${object.album.cover_small} class="img-fluid rounded-start" alt="..." />
       </div>
-      <div class="col-8 d-flex align-items-center">
-        <div class="card-body">
-          <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="card-title">${object.album.title}</h5>
-          <p class="d-none idAlbum">
-          ${object.album.id}
-        </p>
+      <div class="col-10 d-flex align-items-center">
+        <div class="card-body d-flex align-item-center justify-content-between">
+          <h5 idalbum="${object.album.id}" onclick=altraPag(event) class="card-title ps-1">${object.album.title}</h5>
+          
+        <button class="play d-none"><i class="bi bi-play-circle-fill"></i></button>
         
         </div>
       </div>
