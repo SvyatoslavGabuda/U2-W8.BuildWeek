@@ -260,7 +260,7 @@ const fetchUrlAlbum = async function () {
                     el.artist.name
                   }','${el.title}','${el.preview}','${
           el.album.cover_medium
-        }')"><span class="icona"><i class="bi bi-play-fill text-ligth"></i></span><span class="numero">${
+        }')"><span class="icona"><i class="bi bi-play-fill text-light"></i></span><span class="numero">${
           index + 1
         }</span></p>
                 </div>
