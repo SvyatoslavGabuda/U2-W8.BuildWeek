@@ -116,6 +116,24 @@ div.intestazioneAlbum{
         
        
     }
+    .leftPlay{
+        .icona{
+            display: none;
+
+        }
+        .numero{
+            
+
+        }
+        &:hover{
+            .icona{
+                display: inline;
+            }
+            .numero{
+                display: none;
+            }
+        }
+    }
     div.col-5{
         p:nth-of-type(1){
             font-weight: 400;

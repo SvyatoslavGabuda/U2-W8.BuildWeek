@@ -42,6 +42,12 @@ playlistNames.forEach((el) => {
   <a href="#">${el}</a>
 </li>`;
 });
+const altraPag = function (event) {
+  console.log(event.target.getAttribute("idalbum"));
+  location.assign(
+    `../pages/albumPage.html?id=${event.target.getAttribute("idalbum")}`
+  );
+};
 
 const createCards = function (where, object) {
   where.innerHTML += `<div class="col col-3 my-2 mysong">

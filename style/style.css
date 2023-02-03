@@ -367,6 +367,15 @@ div.intestazioneAlbum div.col-9 h5 {
 .tracceAlbum p {
   color: rgb(159, 157, 157);
 }
+.tracceAlbum .leftPlay .icona {
+  display: none;
+}
+.tracceAlbum .leftPlay:hover .icona {
+  display: inline;
+}
+.tracceAlbum .leftPlay:hover .numero {
+  display: none;
+}
 .tracceAlbum div.col-5 p:nth-of-type(1) {
   font-weight: 400;
   color: white;
@@ -409,6 +418,15 @@ div.intestazioneAlbum div.col-9 h5 {
 
 .tracceArtista {
   margin: 0 10px 10px 10px;
+}
+.tracceArtista .leftPlay .icona {
+  display: none;
+}
+.tracceArtista .leftPlay:hover .icona {
+  display: inline;
+}
+.tracceArtista .leftPlay:hover .numero {
+  display: none;
 }
 .tracceArtista p {
   color: rgb(159, 157, 157);

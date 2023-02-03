@@ -211,7 +211,13 @@ const fetchUrlAlbum = async function () {
             </div>
             <div class="row ">
               <div class="col-12 bottoniAlbum">
-                <button class="play" onclick=populatePlayer()><i class="bi bi-play-circle-fill"></i></button>
+                <button class="play" onclick="populatePlayer('${
+                  data.tracks.data[0].artist.name
+                }','${data.tracks.data[0].title}','${
+        data.tracks.data[0].preview
+      }','${
+        data.tracks.data[0].album.cover_medium
+      }')"><i class="bi bi-play-circle-fill"></i></button>
                 <button  id="save" idalbum="${
                   data.id
                 }" onclick=aggiungiPreferiti(event) ><i idalbum="${
@@ -250,9 +256,13 @@ const fetchUrlAlbum = async function () {
         <div class="row tracceAlbum">
               
                 <div class="col-1 d-flex justify-content-center align-items-center ">
-                  <p onclick="populatePlayer('${el.artist.name}','${
-          el.title
-        }','${el.preview}','${el.album.cover_medium}')">${index + 1}</p>
+                  <p class="leftPlay cursorP" onclick="populatePlayer('${
+                    el.artist.name
+                  }','${el.title}','${el.preview}','${
+          el.album.cover_medium
+        }')"><span class="icona"><i class="bi bi-play-fill text-ligth"></i></span><span class="numero">${
+          index + 1
+        }</span></p>
                 </div>
                 <div class="col-5">
                   <p >${el.title}</p>

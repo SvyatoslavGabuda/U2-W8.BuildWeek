@@ -30,6 +30,21 @@
 }
 .tracceArtista {
   margin: 0 10px 10px 10px;
+  .leftPlay{
+    .icona{
+        display: none;
+
+    }
+  
+    &:hover{
+        .icona{
+            display: inline;
+        }
+        .numero{
+            display: none;
+        }
+    }
+}
   p {
     color: rgb(159, 157, 157);
     margin: 0;
