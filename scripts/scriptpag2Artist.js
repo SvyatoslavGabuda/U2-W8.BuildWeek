@@ -158,7 +158,7 @@ const fetchUrlArtist = async function () {
             </div>
             <div class="row ps-4">
               <div class="col-12 bottoniArtista ">
-                <button class="play"><i class="bi bi-play-circle-fill"></i></button>
+                <button onclick="populatePlayer('${tracks.data[0].artist.name}','${tracks.data[0].title}','${tracks.data[0].preview}','${tracks.data[0].album.cover_medium}')" class="play"><i class="bi bi-play-circle-fill"></i></button>
                 <button class="follow">FOLLOWING</button>
                 <button><i class="bi bi-three-dots"></i></button>
               </div>
@@ -184,9 +184,13 @@ const fetchUrlArtist = async function () {
           <div class="row tracceArtista">
                 
                   <div class="col-1 d-flex justify-content-center align-items-center ">
-                    <p onclick="populatePlayer('${el.artist.name}','${
-          el.title
-        }','${el.preview}','${el.album.cover_medium}')">${index + 1}</p>
+                    <p class="leftPlay cursorP" onclick="populatePlayer('${
+                      el.artist.name
+                    }','${el.title}','${el.preview}','${
+          el.album.cover_medium
+        }')"><span class="icona"><i class="bi bi-play-fill text-light"></i></span><span class="numero">${
+          index + 1
+        }</span></p>
                   </div>
                   <div class="col-5">
                   
