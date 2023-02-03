@@ -54,14 +54,18 @@ closeFriends_btn.onclick = showFriends;
 // Rimanda alla pagina album
 const altraPag = function (event) {
   console.log(event.target.getAttribute("idalbum"));
-  location.assign(`../pages/albumPage.html?id=${event.target.getAttribute("idalbum")}`);
+  location.assign(
+    `../pages/albumPage.html?id=${event.target.getAttribute("idalbum")}`
+  );
 };
 
 // Crea le cards album
 const createCards = function (where, object) {
   where.innerHTML += `<div class="col col-6 mb-5 col-sm-4 col-md-3 mysong">
     <div class="card m-2">
-      <img src=${object.album.cover_medium} class="card-img-top" alt="album cover" />
+      <img src=${
+        object.album.cover_medium
+      } class="card-img-top" alt="album cover" />
       <div class="card-body pt-2">
         <h5 idalbum="${
           object.album.id
@@ -79,16 +83,35 @@ const search_icon = document.querySelector(".search-icon");
 const search = async function () {
   const search_results = document.querySelector(".results");
   let input = document.querySelector(".searchBar");
+  let textToSearch = input.value.trim().toLowerCase();
 
-  if (input.value.trim()) {
+  if (textToSearch) {
     search_results.innerHTML = ``;
-    let res = await fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + input.value.trim());
-    let data = await res.json();
-    console.log(data);
+    if (textToSearch === "capitano") {
+      search_results.innerHTML = `
+      <div class="captain m-4">
+        <div><img src="../img/uomocannone.png" alt="uomocannone"></div>
+        <div><img src="../img/capitano.webp" alt="capitano"></div>
 
-    data.data.forEach((card) => {
-      createCards(search_results, card);
-    });
+        <iframe class="mt-4" width="736" height="414" src="https://www.youtube.com/embed/xQKYKyLqF-c" title="La storia di Svyatoslav Gabuda, ovvero lo straordinario Uomo Cannone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        
+      </div>`;
+      // <div class= "py-4">
+      //     <a class=" text-light" href="https://youtu.be/xQKYKyLqF-c?t=30">
+      //     La storia di Svyatoslav Gabuda, ovvero lo straordinario "Uomo Cannone" del circo</a>
+      //   </div>
+    } else {
+      let res = await fetch(
+        "https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
+          textToSearch
+      );
+      let data = await res.json();
+      console.log(data);
+
+      data.data.forEach((card) => {
+        createCards(search_results, card);
+      });
+    }
   }
 };
 
