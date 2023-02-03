@@ -10,6 +10,10 @@
 
 .search-icon {
   cursor: pointer;
+  transition: all 200ms;
+  &:hover {
+    font-size: 1.3em;
+  }
 }
 
 .captain {
