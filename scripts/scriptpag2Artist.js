@@ -1,3 +1,84 @@
+// player audio
+const audio = document.querySelector("audio");
+let seek_slider = document.querySelector(".seek_slider");
+
+let curr_time = document.querySelector(".current-time");
+let total_duration = document.querySelector(".total-duration");
+
+const populatePlayer = function (artist, title, preview, img) {
+  const artist_name = document.querySelector(".track-artist");
+  const track_name = document.querySelector(".track-name");
+  const audio = document.querySelector("audio");
+  const image = document.querySelector(".cover img");
+
+  artist_name.innerText = artist;
+  track_name.innerText = title;
+
+  audio.setAttribute("src", preview);
+  image.setAttribute("src", img);
+  // clearInterval(updateTimer);
+};
+
+const playpauseTrack = function () {
+  const play_pause_btn = document.querySelector(".playpause-track");
+
+  if (audio.paused) {
+    audio.play();
+    play_pause_btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pause-circle-fill mx-2" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5zm3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5z"/>
+  </svg>`;
+    let updateTimer = setInterval(seekUpdate, 1000);
+  } else {
+    audio.pause();
+
+    play_pause_btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-play-circle-fill mx-2" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+</svg>`;
+  }
+};
+
+const setVolume = function () {
+  const volume_slider = document.querySelector(".volume_slider");
+  audio.volume = volume_slider.value / 100;
+};
+
+const seekTo = function () {
+  let seekto = audio.duration * (seek_slider.value / 100);
+  audio.currentTime = seekto;
+};
+
+const seekUpdate = function () {
+  let seekPosition = 0;
+
+  if (!isNaN(audio.duration)) {
+    seekPosition = audio.currentTime * (100 / audio.duration);
+    seek_slider.value = seekPosition;
+
+    let currentMinutes = Math.floor(audio.currentTime / 60);
+    let currentSeconds = Math.floor(audio.currentTime - currentMinutes * 60);
+    let durationMinutes = Math.floor(audio.duration / 60);
+    let durationSeconds = Math.floor(audio.duration - durationMinutes * 60);
+
+    if (currentSeconds < 10) {
+      currentSeconds = "0" + currentSeconds;
+    }
+    if (durationSeconds < 10) {
+      durationSeconds = "0" + durationSeconds;
+    }
+    if (currentMinutes < 10) {
+      currentMinutes = "0" + currentMinutes;
+    }
+    if (durationMinutes < 10) {
+      durationMinutes = "0" + durationMinutes;
+    }
+
+    curr_time.textContent = currentMinutes + ":" + currentSeconds;
+    total_duration.textContent = durationMinutes + ":" + durationSeconds;
+  }
+};
+
+// fine player
+
 // Generare le playlist di Lidia
 const playlistLida = document.getElementById("playlistLidia");
 const playlistNames = [
