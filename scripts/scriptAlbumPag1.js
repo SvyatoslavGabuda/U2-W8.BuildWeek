@@ -6,7 +6,6 @@ let ourID = params.get("id");
 console.log(ourID);
 
 const doveMettiAlbum = document.getElementById("albumCaricati");
-
 const returnMinute = function (sec) {
   const minute = Math.floor(sec / 60);
   let restSeconds = sec - minute * 60;
@@ -62,7 +61,9 @@ playlistNames.forEach((el) => {
 
 const caricaArtista = function (event) {
   console.log(event);
-  location.assign(`../pages/artist.html?id=${event.target.getAttribute("idartist")}`);
+  location.assign(
+    `../pages/artist.html?id=${event.target.getAttribute("idartist")}`
+  );
 };
 const preferiti = [];
 window.onload = () => {
@@ -155,15 +156,21 @@ const fetchUrlAlbum = async function () {
                 class="img-fluid"
                 src=${data.artist.picture_small}
                 alt="album Cover"
-              /> </span><span class="cursorP" idartist="${data.artist.id}" onclick=caricaArtista(event)>${
-        data.artist.name
-      }</span>, ${data.release_date},${data.tracks.data.length} tracce, ${returnMinute(data.duration)} min</p>
+              /> </span><span class="cursorP" idartist="${
+                data.artist.id
+              }" onclick=caricaArtista(event)>${data.artist.name}</span>, ${
+        data.release_date
+      },${data.tracks.data.length} tracce, ${returnMinute(
+        data.duration
+      )} min</p>
               </div>
             </div>
             <div class="row ">
               <div class="col-12 bottoniAlbum">
                 <button class="play" onclick=populatePlayer()><i class="bi bi-play-circle-fill"></i></button>
-                <button  id="save" idalbum="${data.id}" onclick=aggiungiPreferiti(event) ><i idalbum="${
+                <button  id="save" idalbum="${
+                  data.id
+                }" onclick=aggiungiPreferiti(event) ><i idalbum="${
         data.id
       }" class="bi bi-heart cursorP"></i></button>
                 <button><i class="bi bi-arrow-down-circle"></i></button>
@@ -196,7 +203,9 @@ const fetchUrlAlbum = async function () {
                 </div>
                 <div class="col-5">
                   <p >${el.title}</p>
-                  <p class="cursorP" idartist="${el.artist.id}" onclick=caricaArtista(event)>${el.artist.name}</p>
+                  <p class="cursorP" idartist="${
+                    el.artist.id
+                  }" onclick=caricaArtista(event)>${el.artist.name}</p>
                 
               </div>
               <div class="col-3">
