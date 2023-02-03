@@ -116,3 +116,10 @@ const search = async function () {
 };
 
 search_icon.onclick = search;
+//cerca anche se premo invio
+let input = document.querySelector(".searchBar");
+input.addEventListener("keyup", function (event) {
+  if (event.key === "Enter") {
+    search();
+  }
+});
