@@ -86,24 +86,25 @@ const aggiungiPreferiti = function (event) {
     localStorage.setItem("preferiti", JSON.stringify(preferiti));
   }
 };
-const populatePlayer = function (track) {
+// player audio
+const populatePlayer = function (artist, title, preview, img) {
   const artist_name = document.querySelector(".track-artist");
   const track_name = document.querySelector(".track-name");
   const audio = document.querySelector("audio");
   const image = document.querySelector(".cover img");
 
-  artist_name.textContent = track.artist.name;
-  track_name.textContent = track.title;
+  artist_name.innerText = artist;
+  track_name.innerText = title;
 
-  audio.setAttribute("src", track.preview);
-  image.setAttribute("src", track.album.cover_medium);
+  audio.setAttribute("src", preview);
+  image.setAttribute("src", img);
 };
-let index = 0;
+// let index = 0;
 
-const nextTrack = function (object, index) {
-  populatePlayer(object[index]);
-  index++;
-};
+// const nextTrack = function (object, index) {
+//   populatePlayer(object[index]);
+//   index++;
+// };
 
 const playpauseTrack = function () {
   const audio = document.querySelector("audio");
@@ -122,6 +123,12 @@ const playpauseTrack = function () {
 </svg>`;
   }
 };
+const setVolume = function () {
+  const volume_slider = document.querySelector(".volume_slider");
+  const audio = document.querySelector("audio");
+  audio.volume = volume_slider.value / 100;
+};
+// fine player
 
 const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album";
 
@@ -193,13 +200,22 @@ const fetchUrlAlbum = async function () {
             </div>`;
 
       const tracks = data.tracks.data;
-      nextTrack(tracks, 0);
+      // nextTrack(tracks, 0);
+      populatePlayer(
+        tracks[0].artist.name,
+        tracks[0].title,
+        tracks[0].preview,
+        tracks[0].album.cover_medium
+      );
       tracks.forEach((el, index) => {
+        console.log(el);
         doveMettiAlbum.innerHTML += `
         <div class="row tracceAlbum">
               
                 <div class="col-1 d-flex justify-content-center align-items-center ">
-                  <p>${index + 1}</p>
+                  <p onclick="populatePlayer('${el.artist.name}','${
+          el.title
+        }','${el.preview}','${el.album.cover_medium}')">${index + 1}</p>
                 </div>
                 <div class="col-5">
                   <p >${el.title}</p>
