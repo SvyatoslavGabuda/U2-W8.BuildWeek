@@ -177,13 +177,16 @@ const fetchUrlArtist = async function () {
         <p>Di ${artista.name}</p>
       </div>
     </div>`;
+      console.log(tracks.data);
 
       tracks.data.forEach((el, index) => {
         contrainerTracce.innerHTML += `
           <div class="row tracceArtista">
                 
                   <div class="col-1 d-flex justify-content-center align-items-center ">
-                    <p>${index + 1}</p>
+                    <p onclick="populatePlayer('${el.artist.name}','${
+          el.title
+        }','${el.preview}','${el.album.cover_medium}')">${index + 1}</p>
                   </div>
                   <div class="col-5">
                   
