@@ -97,6 +97,7 @@ footer {
   display: flex;
   align-items: center;
   height: 11vh;
+  width: 33%;
 }
 @media screen and (max-width: 768px) {
   .details {
@@ -105,7 +106,7 @@ footer {
 }
 .details .cover {
   height: 11vh;
-  padding: 20px;
+  padding: 8px 10px 8px 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,9 +119,7 @@ footer {
   font-size: 10px;
 }
 .details img {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 100%;
 }
 
 .now-playing {
