@@ -160,6 +160,8 @@ main {
   overflow-x: hidden;
   @media screen and (max-width: 768px) {
     margin-bottom: 250px;
+    overflow-y: visible;
+    
 
     height: 100%;
   }

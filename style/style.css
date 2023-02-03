@@ -749,6 +749,7 @@ main {
 @media screen and (max-width: 768px) {
   main {
     margin-bottom: 250px;
+    overflow-y: visible;
     height: 100%;
   }
 }
